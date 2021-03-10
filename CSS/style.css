@@ -1,118 +1,200 @@
-body{
+body {
     width: 100%;
-    color: white;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
-#grad1-body {
-   
-    background-color: orangered; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgba(245, 57, 10, 0) , orange);
-  }
 
-  /* Nav bar */
-  .nav-link{
-      margin-top: 20px;
-      color: white;
-  }
+#grad-body {
 
-  .nav-link:hover{
-      background-color: blue;
-      color: white;
-  }
+    background-color: orangered;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgba(245, 57, 10, 0), orange);
+}
 
-  /* First section*/
-  .container h1{
-      margin-top: 135px;
-      text-align: center;
-      font-weight: bold;
-  }
-  .search-field{
+/* Nav bar */
+
+.navbar{
+    width: 100%;
+    position: fixed;
+    background-color: orangered;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgba(245, 57, 10, 0), orange);
+}
+.nav-link {
+    margin-top: 20px;
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: blue;
+    color: white;
+}
+
+/* First section*/
+.container h1 {
+    margin-top: 135px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.search-field {
     align: center;
-    
-  }
-  .search-field label{
-      text-align: center;
-      padding-top: 30px;
-      font-weight: bold;
-      margin-bottom: 5px;
-       
-  }
-  .text-service{
+
+}
+
+.search-field label {
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+.text-service {
     border-radius: 5px;
     border: 2px solid white;
     margin-right: 10px;
     background-image: url('https://cdn.iconscout.com/icon/free/png-256/search-1768073-1502246.png');
     background-repeat: no-repeat;
     background-size: 30px;
-    padding-left:30px;
-   
-  }
+    padding-left: 30px;
 
-  /* Login panel */
- div.modal-header{
-     color: black;
-     text-align: center;
- }
- .forgot-p {
-     text-align: center;
-    
- }
- .modal-body div{
-     align-items: center;
-     margin-bottom: 10px;
- }
-  .modal-footer label{
-      color: black;
-      padding-right: 250px;
-  }
-
-  a#forgot-password{
-      
-      text-decoration: none;
-  }
-
-  /* Footer */ 
-
-  footer{
-      position: fixed;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-  }
-
-  .footer-bar{
-      background-color: blue;
-      
-  }
- 
-  .footer-links li{
-     
-      margin-bottom: 15px;
-  }
-.footer-links ul{
-    padding-left: 250px;
-    
 }
-  .brand-text{
-      padding-top: 20px;
-      padding-left: 30px;
-     
-  }
 
-  /* Section 2*/
+/* Login panel */
+div.modal-header {
+    color: black;
+    text-align: center;
+}
 
-.services-img{
-      width: 100%;
+.forgot-p {
+    text-align: center;
+
+}
+
+.modal-body div {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal-footer label {
+    color: black;
+    padding-right: 250px;
+}
+
+a#forgot-password {
+
+    text-decoration: none;
+}
+
+/* Footer */
+
+footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.footer-bar {
+    background-color: blue;
+
+}
+
+.footer-links li {
+
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    padding-left: 250px;
+
+}
+
+.brand-text {
+    padding-top: 20px;
+    padding-left: 30px;
+
+}
+
+/* Section 2*/
+
+.services-img {
+    width: 100%;
     height: 550px;
-      
-      background-color: white;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      
-      margin-top: 210px;
-      margin-bottom: 75px;
-  }
- 
+
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-top: 283px;
+    margin-bottom: 75px;
+}
+
+/* Contact us page*/
+
+.policies-img {
+    
+    width: 100%;
+
+}
+
+.contact-div {
+    background-color: white;
+    height: 800px;
+}
+
+/* Policies content*/
+.about-policies {
+    margin-top: 25px;
+
+}
+
+.about-policies h2 {
+
+    font-weight: bold;
+    color: black;
+
+}
+
+.members-img img {
+    padding-left: 65px;
+}
+
+.policy-bar {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.policy-link {
+    text-decoration: none;
+    font-style: italic;
+}
+
+/*Modal popup policy*/
+.modal-header {
+    background-color: blue;
+    align: center;
+}
+
+.modal-header span {
+    color: white;
+
+}
+
+#policies-title {
+    color: white;
+
+}
+
+.modal-body {
+    height: 350px;
+    overflow: hidden;
+
+}
+
+.policy-btn {
+    padding: 20px;
+}
