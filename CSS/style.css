@@ -14,13 +14,14 @@ body {
 
 /* Nav bar */
 
-.navbar{
+.navbar {
     width: 100%;
     position: fixed;
     background-color: orangered;
     /* For browsers that do not support gradients */
     background-image: linear-gradient(to right, rgba(245, 57, 10, 0), orange);
 }
+
 .nav-link {
     margin-top: 20px;
     color: white;
@@ -32,10 +33,15 @@ body {
 }
 
 /* First section*/
-.container h1 {
+#search-sec h1 {
     margin-top: 135px;
     text-align: center;
     font-weight: bold;
+    color: white;
+}
+
+#search-sec h4 {
+    color: white;
 }
 
 .search-field {
@@ -63,7 +69,9 @@ body {
 }
 
 /* Login panel */
-div.modal-header {
+
+
+.popup-login-text {
     color: black;
     text-align: center;
 }
@@ -73,6 +81,10 @@ div.modal-header {
 
 }
 
+.forgot-p a {
+    margin-top: 50px;
+}
+
 .modal-body div {
     align-items: center;
     margin-bottom: 10px;
@@ -80,12 +92,24 @@ div.modal-header {
 
 .modal-footer label {
     color: black;
-    padding-right: 250px;
+
 }
 
 a#forgot-password {
 
     text-decoration: none;
+}
+
+/* Buttom modal size */
+
+.btn-size {
+    width: 35%;
+}
+
+/* Register modal */
+
+.modal-header {
+    text-align: center;
 }
 
 /* Footer */
@@ -136,7 +160,7 @@ footer {
 /* Contact us page*/
 
 .policies-img {
-    
+
     width: 100%;
 
 }
@@ -146,7 +170,7 @@ footer {
     height: 800px;
 }
 
-/* Policies content*/
+/* Policies content */
 .about-policies {
     margin-top: 25px;
 
@@ -173,13 +197,13 @@ footer {
     font-style: italic;
 }
 
-/*Modal popup policy*/
-.modal-header {
+/*Modal popup policy   */
+.popup-header {
     background-color: blue;
-    align: center;
+
 }
 
-.modal-header span {
+.popup-header span {
     color: white;
 
 }
@@ -189,7 +213,7 @@ footer {
 
 }
 
-.modal-body {
+.popup-body {
     height: 350px;
     overflow: hidden;
 
