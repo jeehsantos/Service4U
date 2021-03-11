@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background: #ffc02a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff722a, #ffc02a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff722a, #ffc02a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Navbar */
+.service4uBrand {
+  color: white !important;
+}
+
+.navTop {
+  background-color: transparent !important;
+}
+
+.navLink {
+  color: #ffffff !important;
+}
+
+.navLink.active {
+  background-color: #0068ff;
+  border-radius: 10px;
+}
+
+.headNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Main content */
+.contactUsContainer {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactUsView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: 50%;
+  padding: 60px;
+}
+
+.formTitle {
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 30px;
+}
+
+.inputGroup>input, textarea{
+  margin-bottom: 10px;
+}
+
+.contactContainer {
+  width: 50%;
+  padding: 60px;
+}
+
+.contactInfoContainer {
+  line-height: 14px;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mapContainer>img {
+  width: 300px;
+}
+
+/* Footer */
+.footerNav {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.navFooter {
+  background-color: #0068ff !important;
+  color: #ffffff;
