@@ -14,8 +14,8 @@ body {
 }
 
 /* Navbar */
-.service4uBrand {
-  color: white !important;
+.navBarImage>img {
+  width: 150px;
 }
 
 .navTop {
@@ -67,7 +67,8 @@ body {
   padding-top: 30px;
 }
 
-.inputGroup>input, textarea{
+.inputGroup>input,
+textarea {
   margin-bottom: 10px;
 }
 
@@ -86,6 +87,23 @@ body {
   width: 300px;
 }
 
+/* Responsive */
+@media screen and (max-width: 699px) {
+  .contactUsView {
+    display: flex;
+    flex-direction: column;
+    height: 1200px;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  .contactContainer {
+    width: 100%;
+  }
+}
+
 /* Footer */
 .footerNav {
   display: flex;
@@ -96,3 +114,8 @@ body {
 .navFooter {
   background-color: #0068ff !important;
   color: #ffffff;
+}
+
+.footerContainer>img {
+  width: 60px;
+}
