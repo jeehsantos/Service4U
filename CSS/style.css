@@ -14,7 +14,7 @@ body {
 
 /* Nav bar */
 
-.navbar {
+#navigation-bar{
     width: 100%;
     position: fixed;
     background-color: orangered;
@@ -22,12 +22,12 @@ body {
     background-image: linear-gradient(to right, rgba(245, 57, 10, 0), orange);
 }
 
-.nav-link {
+#navigation-link {
     margin-top: 20px;
     color: white;
 }
 
-.nav-link:hover {
+#navigation-link:hover {
     background-color: blue;
     color: white;
 }
@@ -49,7 +49,7 @@ body {
 
 }
 
-.search-field label {
+#search-field label {
     text-align: center;
     padding-top: 30px;
     font-weight: bold;
@@ -57,7 +57,7 @@ body {
 
 }
 
-.text-service {
+#text-service {
     border-radius: 5px;
     border: 2px solid white;
     margin-right: 10px;
@@ -73,21 +73,15 @@ body {
 
 .popup-login-text {
     color: black;
-    text-align: center;
+    
 }
 
-.forgot-p {
-    text-align: center;
 
-}
+ 
 
-.forgot-p a {
-    margin-top: 50px;
-}
-
-.modal-body div {
-    align-items: center;
-    margin-bottom: 10px;
+.modal-field{
+   margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .modal-footer label {
@@ -95,8 +89,12 @@ body {
 
 }
 
-a#forgot-password {
-
+#forgot-password{
+    text-align: center;
+    margin-top: 15px;
+}
+#forgot-password a {
+     
     text-decoration: none;
 }
 
@@ -107,10 +105,15 @@ a#forgot-password {
 }
 
 /* Register modal */
-
-.modal-header {
-    text-align: center;
+#teste{
+    padding: 0;
+	width: 100%;
 }
+#teste div{
+    
+    margin: 0px 20px 0px 0px;
+}
+
 
 /* Footer */
 
@@ -221,4 +224,18 @@ footer {
 
 .policy-btn {
     padding: 20px;
+}
+
+
+.profile-pic {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+    border-radius: 50%;
+}
+
+
+.profile-pic img {
+    max-width: 100%;
+    height: auto;
 }
