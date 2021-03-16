@@ -10,6 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
     <link rel="stylesheet" href="CSS/style.css">
     <title>Service4U</title>
 </head>
@@ -26,7 +36,8 @@
                         <a class="nav-link" id="navigation-link" href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="nav-link" id="navigation-link" data-bs-toggle="modal" data-bs-target="#login-panel" href="#">Login</a>
+                        <a class="nav-link" id="navigation-link" data-bs-toggle="modal" data-bs-target="#login-panel"
+                            href="#">Login</a>
                     </li>
                     <li>
                         <a class="nav-link" id="navigation-link" data-bs-toggle="modal" data-bs-target="#register-panel"
@@ -66,7 +77,87 @@
     <!-- Second section having the carousel with services-->
     <section class="sec2">
         <div class="services-img">
+
+
+            <div id="align-cards">
+                <div class="carousel container" style="height: 300px;"
+                    data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
+
+                    <div class="card text-center card-services" style="margin-top: 20px;">
+                        <div class="card-body">
+                            <img class="img-center-card"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2917/2917740.svg?token=exp=1615878497~hmac=71417b6479c24e2184e56b2dbc6f2146"
+                                style="height: 50px; width: 50px;" alt="Gardening icon">
+                            <h3 class="card-title">Gardening</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a class="" href="#">Read more...</a>
+                        </div>
+                    </div>
+
+                    <div class="card text-center card-services" style="background-color: blue; color: white;">
+                        <div class="card-body">
+                            <img class="img-center-card"
+                                src="https://www.flaticon.com/svg/vstatic/svg/3118/3118409.svg?token=exp=1615878665~hmac=c9a8f6649d667327f258c1ec6f33d2d3"
+                                style="height: 50px; width: 50px;" alt="Electrician icon">
+                            <h3 class="card-title">Electrician</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a class="text-white" href="#">Read more...</a>
+                        </div>
+                    </div>
+                    <div class="card text-center card-services " style="margin-top: 20px;">
+                        <div class="card-body">
+                            <img class="img-center-card"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2373/2373373.svg?token=exp=1615878769~hmac=ed04eb7ec9d18bb6bfb930e4af82481d"
+                                style="height: 50px; width: 50px;" alt="Plumbing icon">
+                            <h3 class="card-title">Plumbing</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#">Read more...</a>
+                        </div>
+                    </div>
+                    <div class="card text-center card-services " style="margin-top: 20px;">
+                        <div class="card-body">
+                            <img class="img-center-card"
+                                src="https://www.flaticon.com/svg/vstatic/svg/538/538899.svg?token=exp=1615885834~hmac=c04677cba3678e9821e29528d981e7f6"
+                                style="height: 50px; width: 50px;" alt="Tutors icon">
+                            <h3 class="card-title">Tutors</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#">Read more...</a>
+                        </div>
+                    </div>
+
+                    <div class="card text-center card-services" style="background-color: blue; color: white;">
+                        <div class="card-body">
+                            <img class="img-center-card"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2767/2767643.svg?token=exp=1615886124~hmac=7d80700fd5cf30a6048840b3261441e5"
+                                style="height: 50px; width: 50px;" alt="Construction icon">
+                            <h3 class="card-title">Construction</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a class="text-white" href="#">Read more...</a>
+                        </div>
+                    </div>
+                    <div class="card text-center card-services " style="margin-top: 20px;">
+                        <div class="card-body">
+                            <img class="img-center-card"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2593/2593066.svg?token=exp=1615885799~hmac=43867facc1947a4571f4a876e33b2731"
+                                style="height: 50px; width: 50px;" alt="Mechanic icon">
+                            <h3 class="card-title">Mechanic</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#">Read more...</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
             <img class="img-fluid" src='./IMG/servicios-para-empresas.jpg' alt="teste">
+
+        </div>
         </div>
 
     </section>
@@ -89,25 +180,25 @@
                     <div class="row modal-field">
                         <div class="col">
                             <input type="password" class="form-control" id="password-input" placeholder="Password">
-                           
+
                         </div>
-                        <div id="forgot-password" >
-                        <a href="#">Forgot Password?</a>
+                        <div id="forgot-password">
+                            <a href="#">Forgot Password?</a>
                         </div>
                     </div>
                     <div class="modal-footer">
-                       
-                        <div class="row"  id="teste">
+
+                        <div class="row" id="teste">
                             <div class="col">
                                 <input type="checkbox" class="form-check-input" id="remember-login">
-                             
-                            
+
+
                                 <label class="form-check-label " for="remember-login">Remember me</label>
                             </div>
 
-                                <div class="col">  
-                            <button type="button" class="btn btn-primary">Login</button>
-                        </div> 
+                            <div class="col">
+                                <button type="button" class="btn btn-primary">Login</button>
+                            </div>
                         </div>
 
                     </div>
@@ -189,5 +280,6 @@
     </footer>
 
 </body>
+<script src="JS/landingpage.js"></script>
 
 </html>
