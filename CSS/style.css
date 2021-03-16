@@ -8,8 +8,13 @@ body {
 #grad-body {
 
     background-color: orangered;
-    /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgba(245, 57, 10, 0), orange);
+    background: #ffc02a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff722a, #ffc02a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff722a, #ffc02a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Nav bar */
@@ -17,14 +22,19 @@ body {
 #navigation-bar{
     width: 100%;
     position: fixed;
-    background-color: orangered;
-    /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgba(245, 57, 10, 0), orange);
+    background: #ffc02a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff722a, #ffc02a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff722a, #ffc02a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 #navigation-link {
     margin-top: 20px;
     color: white;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #navigation-link:hover {
