@@ -30,7 +30,7 @@
     <header>
         <nav class="navbar" id="navigation-bar">
             <div class="container-fluid">
-                <img class="navbar-brand" src="" alt="logo">
+                <img class="navbar-brand" id="brand-img-nav" src="IMG/LSSmallWhite.png" alt="logo">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" id="navigation-link" href="index.html">Home</a>
@@ -52,8 +52,8 @@
     <section id="search-sec">
         <div class="container">
             <div class="row">
-                <div class="row container">
-                    <h1>Service4U</h1>
+                <div class="row">
+                    <img id="landing-img" src="IMG/LSFullWhite.png" alt="logo">
                 </div>
                 <div id="search-field">
                     <div class="row">
@@ -87,7 +87,7 @@
                         <div class="card-body">
                             <img class="img-center-card"
                                 src="https://www.flaticon.com/svg/vstatic/svg/2917/2917740.svg?token=exp=1615878497~hmac=71417b6479c24e2184e56b2dbc6f2146"
-                                style="height: 50px; width: 50px;" alt="Gardening icon">
+                                alt="Gardening icon">
                             <h3 class="card-title">Gardening</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
@@ -99,7 +99,7 @@
                         <div class="card-body">
                             <img class="img-center-card"
                                 src="https://www.flaticon.com/svg/vstatic/svg/3118/3118409.svg?token=exp=1615878665~hmac=c9a8f6649d667327f258c1ec6f33d2d3"
-                                style="height: 50px; width: 50px;" alt="Electrician icon">
+                                alt="Electrician icon">
                             <h3 class="card-title">Electrician</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
@@ -110,7 +110,7 @@
                         <div class="card-body">
                             <img class="img-center-card"
                                 src="https://www.flaticon.com/svg/vstatic/svg/2373/2373373.svg?token=exp=1615878769~hmac=ed04eb7ec9d18bb6bfb930e4af82481d"
-                                style="height: 50px; width: 50px;" alt="Plumbing icon">
+                                alt="Plumbing icon">
                             <h3 class="card-title">Plumbing</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
@@ -121,7 +121,7 @@
                         <div class="card-body">
                             <img class="img-center-card"
                                 src="https://www.flaticon.com/svg/vstatic/svg/538/538899.svg?token=exp=1615885834~hmac=c04677cba3678e9821e29528d981e7f6"
-                                style="height: 50px; width: 50px;" alt="Tutors icon">
+                                alt="Tutors icon">
                             <h3 class="card-title">Tutors</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
@@ -133,7 +133,7 @@
                         <div class="card-body">
                             <img class="img-center-card"
                                 src="https://www.flaticon.com/svg/vstatic/svg/2767/2767643.svg?token=exp=1615886124~hmac=7d80700fd5cf30a6048840b3261441e5"
-                                style="height: 50px; width: 50px;" alt="Construction icon">
+                                alt="Construction icon">
                             <h3 class="card-title">Construction</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
@@ -144,7 +144,7 @@
                         <div class="card-body">
                             <img class="img-center-card"
                                 src="https://www.flaticon.com/svg/vstatic/svg/2593/2593066.svg?token=exp=1615885799~hmac=43867facc1947a4571f4a876e33b2731"
-                                style="height: 50px; width: 50px;" alt="Mechanic icon">
+                                alt="Mechanic icon">
                             <h3 class="card-title">Mechanic</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
@@ -167,19 +167,22 @@
         <div class="modal-dialog">
             <div class="modal-content popup-login">
                 <div class="modal-header popup-login-text">
+
                     <h5 class="modal-title">Login</h5>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row modal-field">
                         <div class="col">
-                            <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp"
-                                placeholder="Enter email">
+                            <input type="email" name="email" class="form-control" id="email-login"
+                                aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="row modal-field">
                         <div class="col">
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            <input type="password" name="password" class="form-control" id="password-input"
+                                placeholder="Password">
 
                         </div>
                         <div id="forgot-password">
@@ -218,65 +221,69 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row modal-field">
-                        <div class="col mt-0">
-                            <input type="email" class="form-control" id="name-input" aria-describedby="emailHelp"
-                                placeholder="Name" required>
+                    <!--Form to register a user-->
+                    <form action="" method="POST">
+                        <div class="row modal-field">
+                            <div class="col mt-0">
+                                <input type="text" name="name" class="form-control" id="name-input"
+                                    aria-describedby="FullName" placeholder="Full name" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row modal-field">
-                        <div class="col">
-                            <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp"
-                                placeholder="Email" required>
+                        <div class="row modal-field">
+                            <div class="col">
+                                <input type="email" name="email" class="form-control" id="email-input"
+                                    aria-describedby="emailHelp" placeholder="Email" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row modal-field">
-                        <div class="col">
-                            <input type="password" class="form-control" id="pass-input" aria-describedby="emailHelp"
-                                placeholder="Password" required>
+                        <div class="row modal-field">
+                            <div class="col">
+                                <input type="password" name="password" class="form-control" id="pass-input" aria-describedby="emailHelp"
+                                    placeholder="Password" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row modal-field">
-                        <div class="col">
-                            <input type="password" class="form-control" id="confirm-pass-input"
-                                placeholder="Confirm password" required>
+                        <div class="row modal-field">
+                            <div class="col">
+                                <input type="password" name="repassword" class="form-control" id="confirm-pass-input"
+                                    placeholder="Confirm password" required>
+
+                            </div>
 
                         </div>
+                        <div class="modal-footer d-flex justify-content-center">
 
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center">
-
-                        <button type="button" class="btn btn-primary btn-size">Register</button>
-                    </div>
+                            <button type="submit" class="btn btn-primary btn-size">Register</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer section -->
     <footer class="footer-bar">
-        
-            <div class="row">
-                <div class="col-6">
-                    <h4 class="brand-text">Service4U</h4>
-                </div>
-                <div class="col-6 footer-links">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" id="navigation-link" href="aboutus.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navigation-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navigation-link" href="#">Policies</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navigation-link" href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
+
+        <div class="row">
+            <div class="col-6">
+                <img class="brand-img-footer" src="IMG/LSSmallWhite.png" alt="logo"><span
+                    class="text-white">Service4U</span></img>
             </div>
-         
+            <div class="col-6 footer-links">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="navigation-link" href="aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="navigation-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="navigation-link" href="#">Policies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="navigation-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </footer>
 
 </body>

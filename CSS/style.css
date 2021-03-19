@@ -19,6 +19,9 @@ body {
 
 /* Nav bar */
 
+#brand-img-nav{
+    height: 80px;
+}
 #navigation-bar{
     width: 100%;
     position: fixed;
@@ -43,25 +46,22 @@ body {
 }
 
 /* First section*/
-#search-sec h1 {
+#landing-img{
     margin-top: 135px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
+    margin-left: 29%;
+    width: 500px;
+   
 }
 
 #search-sec h4 {
     color: white;
 }
 
-.search-field {
-    align: center;
-
-}
+ 
 
 #search-field label {
     text-align: center;
-    padding-top: 30px;
+  
     font-weight: bold;
     margin-bottom: 5px;
 
@@ -107,23 +107,23 @@ body {
     font: black;
     border-radius: 5px;
     text-align: center;
- 
     height: 250px;
-    width: 500px;
-   margin-right: 80px;
-   box-shadow:  3px 3px 9px 1px #000;
+    margin-right: 80px;
+    
+    box-shadow:  3px 3px 9px 1px #000;
 }
 
 #align-cards {
     position:absolute;
-    
-    width: 900px;
+    background-color: #000;
+    width: 920px;
     
     top:48%;
     left: 20%;
     
     
 }
+ 
 
  
 .img-center-card {
@@ -132,7 +132,7 @@ margin: auto;
 width: 50px;
 height: 50px;
 }
-.card-services a{
+.card-body a{
 text-decoration: none;
 
 }
@@ -208,9 +208,10 @@ footer {
 
 }
 
-.brand-text {
-    padding-top: 20px;
+.brand-img-footer {
+    padding-bottom: 10px;
     padding-left: 30px;
+    height: 80px;
 
 }
 
@@ -244,6 +245,7 @@ footer {
 
 .members-img img {
     padding-left: 65px;
+    padding-bottom: 90px;
 }
 
 .policy-bar {
