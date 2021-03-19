@@ -1,3 +1,11 @@
+<?php
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
+include('connection.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -171,24 +179,38 @@
                     <h5 class="modal-title">Login</h5>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   
                 </div>
+                <?php 
+                if(isset($_SESSION['nao_autenticado'])):
+                ?>
+                
+                <span style="margin-left:40%;">Usuario nao autenticado</span>
+                
+                <?php
+                endif;
+                unset($_SESSION['nao_autenticado']);
+                ?>
+                
                 <div class="modal-body">
+                    <form action="login.php" method="POST">
                     <div class="row modal-field">
                         <div class="col">
                             <input type="email" name="email" class="form-control" id="email-login"
-                                aria-describedby="emailHelp" placeholder="Enter email">
+                                aria-describedby="emailHelp" placeholder="Enter email" required>
                         </div>
                     </div>
                     <div class="row modal-field">
                         <div class="col">
                             <input type="password" name="password" class="form-control" id="password-input"
-                                placeholder="Password">
+                                placeholder="Password" required>
 
                         </div>
                         <div id="forgot-password">
                             <a href="#">Forgot Password?</a>
                         </div>
                     </div>
+                    
                     <div class="modal-footer">
 
                         <div class="row" id="teste">
@@ -200,11 +222,12 @@
                             </div>
 
                             <div class="col">
-                                <button type="button" class="btn btn-primary">Login</button>
+                                <button type="submit" class="btn btn-primary">Login</button>
                             </div>
                         </div>
 
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -222,7 +245,7 @@
                 </div>
                 <div class="modal-body">
                     <!--Form to register a user-->
-                    <form action="" method="POST">
+                    <form action="registration.php" method="POST">
                         <div class="row modal-field">
                             <div class="col mt-0">
                                 <input type="text" name="name" class="form-control" id="name-input"
@@ -251,7 +274,7 @@
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
 
-                            <button type="submit" class="btn btn-primary btn-size">Register</button>
+                            <button type="submit"  class="btn btn-primary btn-size">Register</button>
                         </div>
                     </form>
                 </div>

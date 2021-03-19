@@ -1,3 +1,11 @@
+<?php
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
+include('connection.php');
+include('index.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
