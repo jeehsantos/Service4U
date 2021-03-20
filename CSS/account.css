@@ -46,6 +46,9 @@ body {
   margin-right: 60px;
   border-radius: 10px;
 }
+.dropDownAccount>img{
+    width: 100px;
+  }
 
 /* Main content */
 .homeWelcome {
