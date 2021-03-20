@@ -41,6 +41,103 @@ body {
   justify-content: flex-end;
 }
 
+
+/*Pop up Login and Registration*/
+
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: 60%;
+  margin-top: 10%;
+  height: 300px;
+}
+
+.loginView {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.loginTitle {
+  font-size: 16px;
+  color: grey;
+}
+
+.formLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.usernameInput {
+  margin-bottom: 15px;
+}
+
+.forgotPass {
+  color: #0068ff;
+  font-weight: lighter !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.signContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.checkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remember {
+  font-size: 14px;
+  color: grey;
+  margin-left: 5px;
+}
+
+.signButton {
+  margin-left: 10px;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+.imageProfile>img {
+  width: 200px;
+}
+
+.imageProfileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Main content */
 .contactUsContainer {
   background-color: white;
