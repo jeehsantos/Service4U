@@ -1,10 +1,39 @@
 <?php
+require_once 'connection.php';
+//buton login
+if(isset($_POST['btn-enter'])):
+    $errors = array();
+    $email = mysqli_real_escape_string($strcon, $_POST['email']);
+    $password = mysqli_real_escape_string($strcon, $_POST['password']);
+    if(empty($email) or empty($password)):
+        $errors[] = "<li> The field login/password must be filler";
+    else:
+       
+        $query = "SELECT email FROM users WHERE email = '$email'";
+         $result = mysqli_query($strcon, $query);
+          
+        if(mysqli_num_rows($result) > 0):
+            $query = "SELECT * FROM `users` WHERE email = '$email' and password = md5('{$password}')";
+            $result = mysqli_query($strcon, $query);
+            if(mysqli_num_rows($result) == 1):
+                $data = mysqli_fetch_array($result);
+                $_SESSION['logged'] = true;
+                $_SESSION['id_user'] = $data['email'];
+                header('Location: aboutus.php');
+            else:
+                $errors[] = "<li>User and password does not match</li>";
+            endif;
+            
+        else:
+            $errors[] = "<li>User does not exist</li>";
+        endif;
+    endif;    
+endif;
+    
  if(!isset($_SESSION)) 
- { 
-     session_start(); 
- } 
-include('connection.php');
-
+{
+    session_start(); 
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,10 +67,10 @@ include('connection.php');
     <header>
         <nav class="navbar" id="navigation-bar">
             <div class="container-fluid">
-                <img class="navbar-brand" id="brand-img-nav" src="IMG/LSSmallWhite.png" alt="logo">
+                <img class="navbar-brand" id="brand-img-nav" src="IMG/LSFullWhite.png" alt="logo">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" id="navigation-link" href="index.html">Home</a>
+                        <a class="nav-link" id="navigation-link" href="index.php">Home</a>
                     </li>
                     <li>
                         <a class="nav-link" id="navigation-link" data-bs-toggle="modal" data-bs-target="#login-panel"
@@ -71,8 +100,8 @@ include('connection.php');
                     </div>
                     <div class="row">
                         <div class="col-xs-6 d-flex justify-content-center">
-                            <input class="text-service" id="text-service" size="45" type="text">
-                            <input class="btn btn-primary " type="button" value="Search">
+                            <input class="text-service" id="text-service" name="search-service" size="45" type="text">
+                            <a href="#" class="btn btn-primary " type="button">Search<a/>
                         </div>
 
                     </div>
@@ -94,7 +123,7 @@ include('connection.php');
                     <div class="card text-center card-services" style="margin-top: 20px;">
                         <div class="card-body">
                             <img class="img-center-card"
-                                src="https://www.flaticon.com/svg/vstatic/svg/2917/2917740.svg?token=exp=1615878497~hmac=71417b6479c24e2184e56b2dbc6f2146"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2917/2917734.svg?token=exp=1616420095~hmac=05a6f3f8bdce4690a2be108c94895119"
                                 alt="Gardening icon">
                             <h3 class="card-title">Gardening</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
@@ -106,7 +135,7 @@ include('connection.php');
                     <div class="card text-center card-services" style="background-color: blue; color: white;">
                         <div class="card-body">
                             <img class="img-center-card"
-                                src="https://www.flaticon.com/svg/vstatic/svg/3118/3118409.svg?token=exp=1615878665~hmac=c9a8f6649d667327f258c1ec6f33d2d3"
+                                src="https://www.flaticon.com/svg/vstatic/svg/3118/3118401.svg?token=exp=1616420050~hmac=56223e0b9cf8cfdaaf07c270f4419539"
                                 alt="Electrician icon">
                             <h3 class="card-title">Electrician</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
@@ -117,7 +146,7 @@ include('connection.php');
                     <div class="card text-center card-services " style="margin-top: 20px;">
                         <div class="card-body">
                             <img class="img-center-card"
-                                src="https://www.flaticon.com/svg/vstatic/svg/2373/2373373.svg?token=exp=1615878769~hmac=ed04eb7ec9d18bb6bfb930e4af82481d"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2373/2373370.svg?token=exp=1616420024~hmac=e9a3f254ac2b9cf8db6360f4eb12ae0f"
                                 alt="Plumbing icon">
                             <h3 class="card-title">Plumbing</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
@@ -128,7 +157,7 @@ include('connection.php');
                     <div class="card text-center card-services " style="margin-top: 20px;">
                         <div class="card-body">
                             <img class="img-center-card"
-                                src="https://www.flaticon.com/svg/vstatic/svg/538/538899.svg?token=exp=1615885834~hmac=c04677cba3678e9821e29528d981e7f6"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2083/2083305.svg?token=exp=1616419953~hmac=59fbfc684929666bf466f433f586ac88"
                                 alt="Tutors icon">
                             <h3 class="card-title">Tutors</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
@@ -140,7 +169,7 @@ include('connection.php');
                     <div class="card text-center card-services" style="background-color: blue; color: white;">
                         <div class="card-body">
                             <img class="img-center-card"
-                                src="https://www.flaticon.com/svg/vstatic/svg/2767/2767643.svg?token=exp=1615886124~hmac=7d80700fd5cf30a6048840b3261441e5"
+                                src="https://www.flaticon.com/svg/vstatic/svg/2767/2767723.svg?token=exp=1616419866~hmac=a9245260d7b7051774b9a86a7f57e5ed"
                                 alt="Construction icon">
                             <h3 class="card-title">Construction</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
@@ -151,7 +180,7 @@ include('connection.php');
                     <div class="card text-center card-services " style="margin-top: 20px;">
                         <div class="card-body">
                             <img class="img-center-card"
-                                src="https://www.flaticon.com/svg/vstatic/svg/2593/2593066.svg?token=exp=1615885799~hmac=43867facc1947a4571f4a876e33b2731"
+                                src="https://www.flaticon.com/svg/vstatic/svg/1995/1995470.svg?token=exp=1616419994~hmac=f827cc2efbaf4d0dbc9b4d9603f51d82"
                                 alt="Mechanic icon">
                             <h3 class="card-title">Mechanic</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
@@ -177,56 +206,52 @@ include('connection.php');
                 <div class="modal-header popup-login-text">
 
                     <h5 class="modal-title">Login</h5>
-
+                     
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   
-                </div>
-                <?php 
-                if(isset($_SESSION['nao_autenticado'])):
-                ?>
-                
-                <span style="margin-left:40%;">Usuario nao autenticado</span>
-                
-                <?php
+                    <?php 
+                if(!empty($errors)):
+                    foreach($errors as $error):
+                        echo $error;
+                    endforeach;
                 endif;
-                unset($_SESSION['nao_autenticado']);
                 ?>
+                </div>
                 
                 <div class="modal-body">
-                    <form action="login.php" method="POST">
-                    <div class="row modal-field">
-                        <div class="col">
-                            <input type="email" name="email" class="form-control" id="email-login"
-                                aria-describedby="emailHelp" placeholder="Enter email" required>
-                        </div>
-                    </div>
-                    <div class="row modal-field">
-                        <div class="col">
-                            <input type="password" name="password" class="form-control" id="password-input"
-                                placeholder="Password" required>
-
-                        </div>
-                        <div id="forgot-password">
-                            <a href="#">Forgot Password?</a>
-                        </div>
-                    </div>
-                    
-                    <div class="modal-footer">
-
-                        <div class="row" id="teste">
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <div class="row modal-field">
                             <div class="col">
-                                <input type="checkbox" class="form-check-input" id="remember-login">
-
-
-                                <label class="form-check-label " for="remember-login">Remember me</label>
+                                <input type="email" name="email" class="form-control" id="email-login"
+                                    aria-describedby="emailHelp" placeholder="Enter email" required>
                             </div>
-
+                        </div>
+                        <div class="row modal-field">
                             <div class="col">
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <input type="password" name="password" class="form-control" id="password-input"
+                                    placeholder="Password" required>
+
+                            </div>
+                            <div id="forgot-password">
+                                <a href="#">Forgot Password?</a>
                             </div>
                         </div>
 
-                    </div>
+                        <div class="modal-footer">
+
+                            <div class="row" id="teste">
+                                <div class="col">
+                                    <input type="checkbox" class="form-check-input" id="remember-login">
+
+
+                                    <label class="form-check-label " for="remember-login">Remember me</label>
+                                </div>
+
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary" name="btn-enter">Login</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </form>
                 </div>
             </div>
@@ -260,8 +285,8 @@ include('connection.php');
                         </div>
                         <div class="row modal-field">
                             <div class="col">
-                                <input type="password" name="password" class="form-control" id="pass-input" aria-describedby="emailHelp"
-                                    placeholder="Password" required>
+                                <input type="password" name="password" class="form-control" id="pass-input"
+                                    aria-describedby="emailHelp" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="row modal-field">
@@ -274,7 +299,7 @@ include('connection.php');
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
 
-                            <button type="submit"  class="btn btn-primary btn-size">Register</button>
+                            <button type="submit" class="btn btn-primary btn-size">Register</button>
                         </div>
                     </form>
                 </div>
