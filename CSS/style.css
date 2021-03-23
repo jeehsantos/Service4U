@@ -297,3 +297,48 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+
+
+/**************************************
+            Contact page 
+ ***************************************/ 
+#status{
+    height: 65px;
+    width: 100%;
+    margin-left: 15px;
+    border-radius: 4px;
+}
+
+#status.success{
+    background-color: rgba(29, 138, 29, 0.664);
+    animation: status 4s ease forwards;
+    color: white;
+    font-size: 15px;
+   padding: 5px 13px 5px 13px;
+}
+
+
+
+#status.error{
+    background-color: rgba(rgb(201, 28, 28);
+    color: white;
+    font-size: 15px;
+    animation: status 4s ease forwards;
+    padding: 5px 13px 5px 13px;
+}
+
+@keyframes status{
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}

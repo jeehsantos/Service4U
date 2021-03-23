@@ -1,5 +1,6 @@
 <?php
 require_once 'connection.php';
+
 //buton login
 if(isset($_POST['btn-enter'])):
     $errors = array();
@@ -232,7 +233,7 @@ endif;
 
                             </div>
                             <div id="forgot-password">
-                                <a href="#">Forgot Password?</a>
+                                <a href="contact.php">Forgot Password?</a>
                             </div>
                         </div>
 
@@ -308,7 +309,7 @@ endif;
     </div>
     <!-- Footer section -->
     <footer class="footer-bar">
-
+       
         <div class="row">
             <div class="col-6">
                 <img class="brand-img-footer" src="IMG/LSSmallWhite.png" alt="logo"><span
@@ -326,12 +327,12 @@ endif;
                         <a class="nav-link" id="navigation-link" href="#">Policies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="navigation-link" href="#">Contact Us</a>
+                        <a class="nav-link" id="navigation-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
             </div>
         </div>
-
+        
     </footer>
 
 </body>
