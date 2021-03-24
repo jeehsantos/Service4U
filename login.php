@@ -1,6 +1,7 @@
-<?php
-include_once('connection.php');
-include_once('index.php');
+<?php include_once('connection.php');?>
+ 
+ 
+ <?php
 //buton login
 if(isset($_POST['btn-enter'])):
     $errors = array();
@@ -20,14 +21,18 @@ if(isset($_POST['btn-enter'])):
                 $data = mysqli_fetch_array($result);
                 $_SESSION['logged'] = true;
                 $_SESSION['id_user'] = $data['email'];
-                header('Location: aboutus.php');
+                header('Location: account.php');
             else:
                 $errors[] = "<li>User and password does not match</li>";
+                header('Location: loginPopup.php');
             endif;
             
         else:
             $errors[] = "<li>User does not exist</li>";
+            header('Location: panel.php');
+             
         endif;
+        
     endif;    
 endif;
 
