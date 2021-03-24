@@ -1,6 +1,6 @@
 <?php
 require_once 'connection.php';
-/*
+
 //buton login
 if(isset($_POST['btn-enter'])):
     $errors = array();
@@ -20,7 +20,7 @@ if(isset($_POST['btn-enter'])):
                 $data = mysqli_fetch_array($result);
                 $_SESSION['logged'] = true;
                 $_SESSION['id_user'] = $data['email'];
-                header('Location: account.php');
+                header('Location: aboutus.php');
             else:
                 $errors[] = "<li>User and password does not match</li>";
             endif;
@@ -30,7 +30,7 @@ if(isset($_POST['btn-enter'])):
         endif;
     endif;    
 endif;
-    */
+    
  if(!isset($_SESSION)) 
 {
     session_start(); 
@@ -219,8 +219,7 @@ endif;
                 </div>
                 
                 <div class="modal-body">
-                   <!-- <form action=" < ?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> -->
-                   <form action="login.php" method="POST">
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                         <div class="row modal-field">
                             <div class="col">
                                 <input type="email" name="email" class="form-control" id="email-login"

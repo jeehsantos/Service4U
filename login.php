@@ -1,6 +1,6 @@
 <?php
 include_once('connection.php');
-
+include_once('index.php');
 //buton login
 if(isset($_POST['btn-enter'])):
     $errors = array();
@@ -20,7 +20,7 @@ if(isset($_POST['btn-enter'])):
                 $data = mysqli_fetch_array($result);
                 $_SESSION['logged'] = true;
                 $_SESSION['id_user'] = $data['email'];
-                header('Location: account.php');
+                header('Location: aboutus.php');
             else:
                 $errors[] = "<li>User and password does not match</li>";
             endif;
