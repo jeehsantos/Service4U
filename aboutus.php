@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+require_once('connection.php');
 include('includes/header.php');
 include('includes/navbar.php');
 include('includes/modals.php');
@@ -60,7 +60,7 @@ include('includes/scripts.php');
                                 personal details extremely seriously. </p>
                         </div>
                         <div class="policy-bar">
-                            <a class="policy-link" data-toggle="modal" data-target="#policy-link" href="#">Read our full
+                            <a class="policy-link"  data-bs-toggle="modal" data-bs-target="#policy-panel" href="#">Read our full
                                 privacy policy.</a>
                         </div>
 
@@ -71,54 +71,7 @@ include('includes/scripts.php');
             </div>
 
         </div>
-        <!-- Modal policies -->
-        <div class="modal fade" id="policy-link" tabindex="-1" role="dialog" aria-labelledby="Policy popup"
-            aria-hidden="true">
-
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                <div class="modal-content">
-                    <div class="modal-header popup-header">
-                        <h5 class="modal-title " id="policies-title">
-                            Policies
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                            <span aria-hidden="true">
-                                ×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body popup-body">
-                        <h5>We gather and use your personal details to deliver our mission of making life easier for
-                            Kiwis through online interactions that you will enjoy. We agree to the following ideals in
-                            our approach:</h5>
-                        <br>
-                        <p>
-                            • We will protect your privacy and handle your details with the highest of respect.
-                        </p>
-                        <p>
-                            • We are dedicated to being open and truthful so that you have full knowledge of what your
-                            information is used for (including if something goes wrong).
-                        </p>
-                        <p>
-                            • We use personal details to give more benefit to your existence.
-                        </p>
-                        <p>
-                            • We do not intrude upon or abuse your faith.
-                        </p>
-                        <p>
-                            To aid address any concerns regarding this privacy policy or if you have any questions,
-                            <strong>please email us.</strong></p>
-
-
-
-                    </div>
-                    <div class="container policy-btn d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary">Accept</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
     </section>
      
   

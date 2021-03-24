@@ -1,0 +1,621 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background: #ffc02a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff722a, #ffc02a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff722a, #ffc02a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Navbar */
+.navBarImage>img {
+  width: 150px;
+}
+
+.navTop {
+  background-color: transparent !important;
+}
+
+.navLink {
+  color: #ffffff !important;
+}
+
+.navLink.active {
+  background-color: #0068ff;
+  border-radius: 10px;
+}
+
+.headNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inputGroup>input {
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.inputGroup>select {
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.inputGroup>button {
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/*Pop up Login and Registration*/
+
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: 60%;
+  margin-top: 10%;
+  height: 300px;
+}
+
+.loginView {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.loginTitle {
+  font-size: 16px;
+  color: grey;
+}
+
+.formLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.usernameInput {
+  margin-bottom: 15px;
+}
+
+.forgotPass {
+  color: #0068ff;
+  font-weight: lighter !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.signContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.checkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remember {
+  font-size: 14px;
+  color: grey;
+  margin-left: 5px;
+}
+
+.signButton {
+  margin-left: 10px;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+.imageProfile>img {
+  width: 200px;
+}
+
+.imageProfileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content */
+.content {
+  background-color: #ffffff;
+  width: 100%;
+  height: 900px;
+  display: flex;
+}
+
+.announcesCardsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+.cardsFilters {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.addService {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addService>p {
+  margin: 0 5px 0 0;
+}
+
+.addService>button {
+  width: 60px;
+  border-radius: 10px;
+}
+
+.cardsContainer {
+  margin-top: 10px;
+  margin-bottom: 120px;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.infoCardContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.colImage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.colData {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.cityName {
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.cardTitle {
+  color: #4d4d4d;
+}
+
+.cardText {
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardRate {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.mapContainer {
+  margin-top: 5%;
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mapContainer>img {
+  width: 480px;
+}
+
+
+/* Modal Announce */
+.modal-dialog {
+  max-width: 1000px;
+}
+
+.modalBodyContainer {
+  width: 100%;
+  display: flex;
+}
+
+.announceDiv {
+  width: 50%;
+  padding: 10px;
+}
+
+.textAnnounce {
+  padding-bottom: 7em;
+}
+
+.textAnnounce>p {
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.priceAndReferences {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  align-items: flex-end;
+}
+
+.priceAndReferences>p {
+  margin: 0;
+  color: #4d4d4d;
+}
+
+.priceAndReferences>a {
+  margin: 0;
+  color: #4d4d4d;
+}
+
+.textareaContainer {
+  width: 100%;
+}
+
+.collapseReferences {
+  margin: 10px 0 10px 0;
+}
+
+.referencesBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4d4d4d;
+}
+
+.referencesContact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 13px;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+
+.referencesContact>p {
+  margin-bottom: 2px;
+}
+
+.textareaButton {
+  display: flex;
+  align-items: flex-end;
+}
+
+.textareaButton>button {
+  margin-left: 10px;
+  font-size: 12px;
+  height: 30px;
+}
+
+.reviewAnnounce {
+  color: #4d4d4d;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  margin: 5px 90px 0 0;
+}
+
+.imagesAndMap {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagesCarrousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.imagesCarrousel>img {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.carrouselContainer {
+  margin-top: 5px;
+}
+
+.carrouselContainer>img {
+  width: 60px;
+  border-radius: 10px;
+}
+
+.modalMap>img {
+  width: 300px;
+}
+
+.commentSection {
+  margin-top: 50px;
+}
+
+.modalReferenceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.referenceImage {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.referenceData>textarea {
+  max-width: 500px;
+  width: 500px;
+}
+
+.referenceData>p {
+  margin: 0;
+}
+
+.referenceRate {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.referenceImage>img {
+  width: 90px;
+}
+
+.myComment {
+  width: 80%;
+}
+
+.commentMyreference {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.commentMyreference>button {
+  height: 40px;
+  margin-left: 10px;
+}
+
+
+/* Modal New Service */
+.modalBodyService {
+  display: flex;
+  width: 100%;
+}
+
+.groupServiceInputs {
+  width: 50%;
+}
+
+.selectAreas {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.groupServiceInputs>input {
+  margin-bottom: 20px;
+}
+
+.groupServiceInputs>textarea {
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.checkBoxesArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #4d4d4d;
+}
+
+.checkBoxesArea>input {
+  width: 90px;
+}
+
+.groupServicePhoto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.imageBorders {
+  padding: 70px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  color: #4d4d4d;
+  margin-bottom: 10px;
+}
+
+.imageButtons {
+  margin-bottom: 50px;
+}
+
+.imageButtons>button {
+  border-radius: 10px;
+}
+
+.imageAddButton {
+  margin-top: 70px;
+}
+
+.imageAddButton>button {
+  width: 150px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 699px) {
+  .modalBodyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .announceDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .textAnnounce {
+    padding: 20px;
+  }
+
+  .sendMessage {
+    width: 90%;
+  }
+
+  .imagesAndMap {
+    width: 100%;
+  }
+
+  .commentSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .commentMyreference {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .referenceData>p {
+    font-size: 11px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .referenceData>textarea {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 1500px;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .announcesCardsContainer {
+    width: 100%;
+  }
+
+  .mapContainer {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 1550px) {
+  .mapContainer>img {
+    width: 400px;
+  }
+}
+
+
+/* Footer */
+.footerNav {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.navFooter {
+  background-color: #0068ff !important;
+  color: #ffffff;
+}
+
+.footerContainer>img {
+  width: 60px;
+}

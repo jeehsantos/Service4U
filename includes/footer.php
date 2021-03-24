@@ -12,13 +12,14 @@
                 <a class="nav-link" id="navigation-link" href="./aboutus.php">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="navigation-link" href="#">Services</a>
+                <a class="nav-link" id="navigation-link" href="./announces.php">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="navigation-link" href="#">Policies</a>
+                <a class="nav-link" id="navigation-link"  data-bs-toggle="modal" data-bs-target="#policy-panel"
+                            href="#">Policies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="navigation-link" href="contact.php">Contact Us</a>
+                <a class="nav-link" id="navigation-link" href="./contact.php">Contact Us</a>
             </li>
         </ul>
     </div>
