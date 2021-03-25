@@ -1,11 +1,5 @@
-<?php
-include_once('connection.php'); 
-if(!isset($_SESSION)) 
-{
-    session_start(); 
-}
-?> 
- <?php
+<?php include_once('connection.php');
+ 
 //buton login
 if(isset($_POST['btn-enter'])):
     $errors = array();
@@ -22,6 +16,7 @@ if(isset($_POST['btn-enter'])):
             $query = "SELECT * FROM `users` WHERE email = '$email' and password = md5('{$password}')";
             $result = mysqli_query($strcon, $query);
             if(mysqli_num_rows($result) == 1):
+                session_start();
                 $data = mysqli_fetch_array($result);
                 $_SESSION['logged'] = true;
                 $_SESSION['id_user'] = $data['email'];
