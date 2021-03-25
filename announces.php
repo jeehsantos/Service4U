@@ -2,15 +2,9 @@
 session_start();
 include('connection.php');
 include('login.php'); 
+include('includes/modals.php');
  
  
-if(empty($_SESSION['id_user'])){
-  echo "<h5 class='message-alert' style='background-color:red; text-align: center; color: white; margin-bottom: 0px;'>You have to log in to have an announce</h5>";
-}else{
-  include('includes/newService.php');
-} 
-
-      
  
 function limit_phrase($texto , $limite, $quebra = true) {
     $tamanho = strlen($texto);
@@ -72,9 +66,8 @@ function limit_phrase($texto , $limite, $quebra = true) {
               <a class="nav-link navLink" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navLink" href="#" data-bs-toggle="modal"
-              data-bs-target="#loginModal" data-bs-toggle="modal"
-              data-bs-target="#registerModal">Login</a>
+              <a class="nav-link navLink" id="navigation-link" data-bs-toggle="modal" data-bs-target="#login-panel"
+                            href="#">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navLink" href="#">Register</a>
@@ -145,7 +138,7 @@ function limit_phrase($texto , $limite, $quebra = true) {
               <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div class="infoCardContainer">
                   <div class="colImage">
-                    <img src="IMG/Captura.JPG" alt="Announcers">
+                    <img src="https://reahomesllc.com/wp-content/uploads/2020/03/no-image-icon.png" alt="Announcers">
                   </div>
                   <div class="colData">
                     <div class="cityName">' . $result->fetch_assoc()['user_location'] . '</div>';
