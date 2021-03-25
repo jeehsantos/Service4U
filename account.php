@@ -1,6 +1,6 @@
 <?php
 include_once('connection.php');
-
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -315,7 +315,7 @@ include_once('connection.php');
               <a class="nav-link navLink" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navLink" href="#">Services</a>
+              <a class="nav-link navLink" href="announces.php">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navLink" href="#">Policies</a>

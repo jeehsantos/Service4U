@@ -1,6 +1,18 @@
-<?php include('connection.php');
+<?php 
+session_start();
+include('connection.php');
+include('login.php'); 
  
-function limita_caracteres($texto , $limite, $quebra = true) {
+ 
+if(empty($_SESSION['id_user'])){
+  echo "<h5 class='message-alert' style='background-color:red; text-align: center; color: white; margin-bottom: 0px;'>You have to log in to have an announce</h5>";
+}else{
+  include('includes/newService.php');
+} 
+
+      
+ 
+function limit_phrase($texto , $limite, $quebra = true) {
     $tamanho = strlen($texto);
 
     // Verifica se o tamanho do texto é menor ou igual ao limite
@@ -104,10 +116,10 @@ function limita_caracteres($texto , $limite, $quebra = true) {
                   <option value="2">Reviews</option>
                 </select>
               </div>
-
+   
               <div class="addService">
                 <p>Add service</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary" name="announce-enter" data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop">+</button>
               </div>
             </div>
@@ -140,7 +152,7 @@ function limita_caracteres($texto , $limite, $quebra = true) {
               $result->data_seek($j);
               echo '<h5 class="card-title cardTitle">' . $result->fetch_assoc()['announce_title'] . '</h5>';
               $result->data_seek($j);
-              echo '<p class="cardText">' . limita_caracteres($result->fetch_assoc()['description'],150) . '</p>
+              echo '<p class="cardText">' . limit_phrase($result->fetch_assoc()['description'],150) . '</p>
               <div class="cardRate">
                 <p class="card-text"><small class="text-muted">94%</small></p>
               </div>
@@ -302,7 +314,7 @@ function limita_caracteres($texto , $limite, $quebra = true) {
         </div>
       </div>
 
-      <!-- Modal New Service  -->
+      <!-- Modal New Service   
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -376,7 +388,7 @@ function limita_caracteres($texto , $limite, $quebra = true) {
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
 
   </div>
   </section>

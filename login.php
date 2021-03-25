@@ -1,6 +1,10 @@
-<?php include_once('connection.php');?>
- 
- 
+<?php
+include_once('connection.php'); 
+if(!isset($_SESSION)) 
+{
+    session_start(); 
+}
+?> 
  <?php
 //buton login
 if(isset($_POST['btn-enter'])):
