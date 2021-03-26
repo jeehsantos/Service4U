@@ -1,14 +1,15 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+
 require_once('connection.php');
 include('includes/header.php');
 include('includes/navbar.php');
 include('includes/modals.php');
 include('includes/footer.php');
 include('includes/scripts.php');
- if(!isset($_SESSION)) 
- { 
-     session_start(); 
- } 
  
  
 ?>

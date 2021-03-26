@@ -1,3 +1,7 @@
+<?php
+include('includes/modals.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

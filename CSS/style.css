@@ -1,3 +1,35 @@
+@charset "utf-8";
+/*
+Theme Name: Service4U - Announce and search services.
+Author: Service4U Team
+Version:1.0
+*/
+
+/*===========================
+ =  Table of CSS
+ 
+    1. Typography 
+    
+    2. Navbar
+    
+    3. Home page First Section
+    3.1 Home page Second section 
+    
+    4. Modal
+      4.1 Login modal
+      4.2  Policies modal
+        4.2.1 Policies content
+    5. Footer
+
+    6. Contact page
+    6.1  Contact us page (form)
+    */
+
+
+    
+/*====================
+	1. General code
+==========================*/
 body {
     width: 100%;
     margin: 0;
@@ -6,7 +38,7 @@ body {
 }
 
 #grad-body {
-
+     
     background-color: orangered;
     background: #ffc02a;
   /* fallback for old browsers */
@@ -17,7 +49,9 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Nav bar */
+/*====================
+	2 Navbar
+==========================*/
 
 #brand-img-nav{
     height: 80px;
@@ -45,14 +79,18 @@ body {
     color: white;
 }
 
-/* First section*/
+/*====================
+	3. First section
+==========================*/
 #landing-img{
-    margin-top: 7%;
+    margin-top: 9%;
     margin-left: 29%;
     width: 500px;
    
 }
-
+#search-sec{
+    width: 100%;
+}
 #search-sec h4 {
     color: white;
 }
@@ -78,24 +116,30 @@ body {
 
 }
 
-/* Section 2*/
+/*====================
+	3.1 Home page Section 2
+==========================*/
+
+.sec2{
+    width: 100%;
+}
 /*This class comes from slick, here I am defining the cards div size*/
 .slick-list{
    
     height: 100%;
-    width: 750px;
+    width: 850px;
 }
 
  
 .services-img {
+    
     width: 100%;
     height: 585px;
-
     background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
+   
     margin-top: 283px;
     margin-bottom: 75px;
 
@@ -137,8 +181,9 @@ text-decoration: none;
 
 }
 
-/* Login panel */
-
+/*====================
+	4.1 Login modal
+==========================*/
 
 .popup-login-text {
     color: black;
@@ -173,24 +218,27 @@ text-decoration: none;
     width: 35%;
 }
 
-/* Register modal */
-#teste{
+ 
+#login-footer{
     padding: 0;
 	width: 100%;
 }
-#teste div{
+#login-footer div{
     
     margin: 0px 20px 0px 0px;
 }
 
 
-/* Footer */
+/*====================
+	5. Footer
+==========================*/
 
 footer {
     position: fixed;
     width: 100%;
     left: 0;
     bottom: 0;
+    z-index: 99;
 }
  
 .footer-bar {
@@ -219,7 +267,7 @@ footer {
 
 
 /******************************** 
-        Contact us page
+      6.  Contact us page
 *********************************/
 
 .policies-img {
@@ -233,7 +281,10 @@ footer {
     height: 800px;
 }
 
-/* Policies content */
+
+/*====================
+	4.2.1 Policies content
+==========================*/
 .about-policies {
     margin-top: 25px;
 
@@ -261,7 +312,9 @@ footer {
     font-style: italic;
 }
 
-/*Modal popup policy   */
+/*====================
+	4.2 Policies modal
+==========================*/
 .popup-header {
     background-color: blue;
 
@@ -303,9 +356,9 @@ footer {
 
 
 
-/**************************************
-            Contact page 
- ***************************************/ 
+/*====================
+	6.1  Contact us page (form)
+==========================*/
 #status{
     height: 65px;
     width: 100%;

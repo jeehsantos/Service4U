@@ -1,16 +1,17 @@
 <?php
+if(!isset($_SESSION)) 
+{
+    session_start(); 
+}
+
+
 require_once('connection.php');
 include('includes/header.php');
 include('includes/navbar.php');
 include('includes/modals.php');
 include('includes/footer.php');
 include('includes/scripts.php');
- if(!isset($_SESSION)) 
-{
-    session_start(); 
-}
-?>
-
+?>  
 
     <!-- First section having the input field to search the services-->
     <section id="search-sec">
@@ -36,14 +37,42 @@ include('includes/scripts.php');
 
             </div>
         </div>
+         
     </section>
 
     <!-- Second section having the carousel with services-->
     <section class="sec2">
-        <div class="services-img">
-
-
+        <div class="services-img" >
             <div id="align-cards">
+        <div class="carousel" style="height: 300px;">
+  <div><img src="https://i.imgur.com/3aIutJi.png" alt="js" /></div>
+  <div><img src="https://i.imgur.com/rWtGeQ0.png" alt="java" /></div>
+  <div><img src="https://i.imgur.com/8946bSF.png" alt="python"/></div>
+  <div><img src="https://i.imgur.com/9Hc7hjb.png" alt="kotlin" /></div>
+  <div><img src="https://i.imgur.com/uZDEpjX.png" alt="scala" /></div>
+  <div><img src="https://i.imgur.com/eQoyQjy.png" alt="C#" /></div>
+  <div><img src="https://i.imgur.com/ko3iAbu.png" alt="PHP" /></div>
+  <div><img src="https://i.imgur.com/Afkz5od.png" alt="dotnet" /></div>
+</div></div>
+<div id="align-cards">
+<div class="carousel">
+  <div ><img
+                                src="https://www.flaticon.com/svg/vstatic/svg/2917/2917734.svg?token=exp=1616420095~hmac=05a6f3f8bdce4690a2be108c94895119"
+                                alt="Gardening icon">
+                            <h3 >Gardening</h3>
+                            <p >With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a class="" href="#">Read more...</a></div>
+  <div><img src="https://i.imgur.com/rWtGeQ0.png" alt="java" /></div>
+  <div><img src="https://i.imgur.com/8946bSF.png" alt="python"/></div>
+  <div><img src="https://i.imgur.com/9Hc7hjb.png" alt="kotlin" /></div>
+  <div><img src="https://i.imgur.com/uZDEpjX.png" alt="scala" /></div>
+  <div><img src="https://i.imgur.com/eQoyQjy.png" alt="C#" /></div>
+  <div><img src="https://i.imgur.com/ko3iAbu.png" alt="PHP" /></div>
+  <div><img src="https://i.imgur.com/Afkz5od.png" alt="dotnet" /></div>
+</div>
+</div>
+            <!-- <div id="align-cards">
                 <div class="carousel container" style="height: 300px;"
                     data-slick='{"slidesToShow": 3, "slidesToScroll": 3}'>
 
@@ -118,7 +147,7 @@ include('includes/scripts.php');
 
                 </div>
 
-            </div>
+            </div> -->
             <img class="img-fluid" src='./IMG/servicios-para-empresas.jpg' alt="teste">
 
         </div>

@@ -39,7 +39,7 @@
 
                     <div class="modal-footer">
 
-                        <div class="row" id="teste">
+                        <div class="row" id="login-footer">
                             <div class="col">
                                 <input type="checkbox" class="form-check-input" id="remember-login">
 

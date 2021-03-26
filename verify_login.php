@@ -1,6 +1,6 @@
 <?php
- 
-if(!$_SESSION['user']){
+   
+if($_POST['logged']){
     header('Location: index.php');
     exit();
 }
