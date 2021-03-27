@@ -18,9 +18,17 @@ if(isset($_POST['btn-enter'])):
             if(mysqli_num_rows($result) == 1):
                 session_start();
                 $data = mysqli_fetch_array($result);
+                if($data['role_id'] == 1 ){
+                    $_SESSION['logged'] = true;
+                    $_SESSION['id_user'] = $data['email'];
+                    $_SESSION['name'] = $data['fullName'];
+                    header('Location: Admin/index.php');
+                }else{ 
                 $_SESSION['logged'] = true;
                 $_SESSION['id_user'] = $data['email'];
+                $_SESSION['user_id'] = $data['user_id'];
                 header('Location: account.php');
+            }
             else:
                 $errors[] = "<li>User and password does not match</li>";
                 header('Location: loginPopup.php');

@@ -91,6 +91,9 @@ body {
   
   .imageProfile>img {
     width: 200px;
+    height: 200px;
+    position: sticky;
+    border-radius: 50%;
   }
   
   .imageProfileContainer {

@@ -233,7 +233,7 @@ include('includes/modals.php');
             'Accept': 'application/json'
           }
         }).then(response => {
-          status.innerHTML = "Thanks for your submission!";
+          status.innerHTML = "Thanks, email sent!";
           form.reset()
           status.classList.add('success');
         }).catch(error => {

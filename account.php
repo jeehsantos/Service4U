@@ -1,6 +1,10 @@
 <?php
+if(!isset($_SESSION)) 
+{
+    session_start(); 
+}
 include_once('connection.php');
- 
+include_once('login.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,45 +82,58 @@ include_once('connection.php');
         <button type="button" class="btn btn-primary buttonSearch">Search</button>
       </div>
 
+      <?php 
+ 
+ $user_id = $_SESSION['user_id'];
+ 
 
+ $query = "SELECT * FROM users WHERE user_id = $user_id";
+                $result = mysqli_query($strcon, $query);        
+                $row_announce = mysqli_fetch_assoc($result);
+               echo '
       <!-- Modal Profile -->
       <div>
         <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
+          <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header modalHeader">
                 <h5 class="modal-title" id="profileModalLabel">My profile</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body modalProfileBody">
-                <div class="imageProfileContainer">
-                  <div class="imageProfile"><img src="IMG/user-profile.jpg" alt="Profile image"> </div>
-                  <button type="button" class="btn btn-primary">Search</button>
+             
+               <div class="row">
+                <div class="col-5"> 
+               <div class="imageProfileContainer">
+               <form action="updateProfile.php" method="POST" enctype="multipart/form-data">
+                  <div class="imageProfile img-fluid"><img id="imagem2" src="IMG/user-profile.jpg" alt="Profile image"> </div>
+                  <div class="mb-3">
+  <label for="formFileSm" class="form-label">Upload image</label>
+  <input class="form-control form-control-sm"  type="file" name="imagem" id="imagem" onchange="previewImagem()">
+            </div>
+</div>
                 </div>
-                <form action="updateProfile.php" method="POST">
-                <?php  
-                $teste =  $_SESSION['id_user'];
-                  echo "teste $teste";
-                  ?>
+                <div class="col-7">
+            
                   <div class="inputsProfileContainer">
-                    <input type="text" class="form-control" placeholder="Full name" aria-describedby="addon-wrapping">
-                    <input type="text" class="form-control" placeholder="Profile image"
-                      aria-describedby="addon-wrapping">
-                    <input type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping">
+                    <input type="text" class="form-control" value="'.  $row_announce['fullName'] .'" placeholder="Full name" aria-describedby="addon-wrapping">
+                    
+                    <input type="text" class="form-control" value="'. $row_announce['email'] .'" placeholder="Email" aria-describedby="addon-wrapping">
 
                     <div class="inputsProfileGroup">
-                      <input type="text" class="form-control" placeholder="Address" aria-describedby="addon-wrapping">
-                      <input type="text" class="form-control" placeholder="Postcode" aria-describedby="addon-wrapping">
+                      <input type="text" class="form-control" value="'. $row_announce['address'] .'"  placeholder="Address" aria-describedby="addon-wrapping">
+                      <input type="text" class="form-control" value="'. $row_announce['postCode'] .'" placeholder="Postcode" aria-describedby="addon-wrapping">
                     </div>
                     <div class="inputsProfileGroup">
-                      <input type="text" class="form-control" placeholder="Phone" aria-describedby="addon-wrapping">
-                      <input type="text" class="form-control" placeholder="City" aria-describedby="addon-wrapping">
+                      <input type="text" class="form-control" value="'. $row_announce['phone'] .'" placeholder="Phone" aria-describedby="addon-wrapping">
+                      <input type="text" class="form-control" value="'. $row_announce['city'] .'" placeholder="City" aria-describedby="addon-wrapping">
                     </div>
-                    <input type="text" class="form-control" placeholder="Password" aria-describedby="addon-wrapping">
+                    <input type="password" class="form-control" placeholder="Password" value="'. $row_announce['password'] .'" aria-describedby="addon-wrapping">
                     <input type="text" class="form-control" placeholder="Confirm password"
                       aria-describedby="addon-wrapping">
                     <div class="buttonProfileContainer">
                       <button type="button" class="btn btn-primary">Update</button>
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -125,7 +142,7 @@ include_once('connection.php');
           </div>
         </div>
       </div>
-
+      ';?>
       <!-- Modal My Announces -->
       <div class="modalAnnounces">
         <div class="modal fade" id="myAnnouncesModal" tabindex="-1" aria-labelledby="myAnnouncesModalLabel"
@@ -335,6 +352,26 @@ include_once('connection.php');
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
   <script type="module" src="main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script>
+			function previewImagem(){
+				var imagem = document.querySelector('input[name=imagem]').files[0];
+				var preview = document.getElementById('imagem2');
+				
+				var reader = new FileReader();
+				
+				reader.onloadend = function () {
+					preview.src = reader.result;
+				}
+				
+				if(imagem){
+					reader.readAsDataURL(imagem);
+				}else{
+					preview.src = "";
+				}
+			}
+		</script>
 </body>
 
 </html>
