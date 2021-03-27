@@ -2,7 +2,7 @@
     <header>
         <nav class="navbar" id="navigation-bar">
             <div class="container-fluid">
-                <img class="navbar-brand" id="brand-img-nav" src="IMG/LSFullWhite.png" alt="logo">
+                <a href="index.php"><img class="navbar-brand"  id="brand-img-nav" src="IMG/LSFullWhite.png" alt="logo"></a>
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" id="navigation-link" href="index.php">Home</a>
