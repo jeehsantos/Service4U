@@ -9,30 +9,30 @@ include('includes/modals.php');
  
  
 if(empty($_SESSION['id_user'])){
-  echo "<h5 class='message-alert' style='background-color:red; text-align: center; color: white; margin-bottom: 0px;'>You have to log in to have an announce</h5>";
+  echo "<h5 class='message-alert' style='background-color:red; text-align: center; color: white; margin-bottom: 0px;'>You have to log in to include an announce</h5>";
 }else{
-  include('newService.php');
+  include('includes/newService.php');
 } 
 function limit_phrase($text , $limit, $break = true) {
   $size = strlen($text);
 
-  // Verifica se o size do text é menor ou igual ao limit
+  // Check if the text size is smaller or similar to the limit
   if ($size <= $limit) {
       $new_text = $text;
     } else {
-      // Verifica a opção de break o text
+      //Check the break text option
       if ($break == true) {
           $new_text = trim(substr($text, 0, $limit)).'...';
-      // Se não, corta $texto na última palavra antes do limit
+      // Else, breaks the $text into the last word before the limit
     } else {
-      // Localiza o útlimo espaço antes de $limit
+      // Search the last space before the $limit
       $last_space = strrpos(substr($text, 0, $limit), ' ');
-      // Corta o $text até a posição localizada
+      // Breaks the $text until the located position
       $new_text = trim(substr($text, 0, $last_space)).'...';
     }
   }
 
-  // Retorna o valor formatado
+  // Returns the formated value
   return $new_text;}
   
 ?>
@@ -214,27 +214,8 @@ function limit_phrase($text , $limit, $break = true) {
   </nav>
            
   </div>
-  <script>
-    $(document).ready(function(){
-				$(document).on('click','.view_data', function(){
-					var user_id = $(this).attr("id");
-          
-					//Check if the id "user_id" has any.
-				 	if(user_id !== ''){
-						var dados = {
-							user_id: user_id
-						};
-						$.post('viewAnnounce.php', dados, function(retorna){
-							//Carregar o conteúdo para o usuário
-						 	$("#viewAnnounceContent").html(retorna);
-					 
-            $('#viewAnnounce').modal('show'); 
-						});
-					} 
-				});
-			});
-
-        </script> 
+  
+        <script src="JS/announces.js"></script>
         <script>
         CKEDITOR.replace('announce-description');
          </script>

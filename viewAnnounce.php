@@ -1,9 +1,9 @@
 <?php
-     if(isset($_POST["user_id"])){
+     if(isset($_POST['announce_id'])){
         include_once "connection.php";
-
+        include_once "PHPEmailer/envia-email.php";
         $resultado = '';   
-    $query_announce = "SELECT * FROM user_announce WHERE announce_id = '" . $_POST['user_id'] . " 'LIMIT 1";
+    $query_announce = "SELECT * FROM user_announce WHERE announce_id = '" . $_POST['announce_id'] . " 'LIMIT 1";
     $result = mysqli_query($strcon, $query_announce);
     $row_announce = mysqli_fetch_assoc($result);
      
@@ -42,11 +42,12 @@
     
   </div>
 </div>
+<form action="PHPEmailer/envia-email.php" method="POST">
 <textarea class="form-control" aria-label="With textarea"></textarea>
 </div>
-<button type="button" class="btn btn-primary buttonSearch">Message</button>
+<button type="submit" class="btn btn-primary buttonSearch" style="width: 150px;">Message me</button>
 </div>
-
+</form>
 <div class="reviewAnnounce">
 <p>Reviews 92%</p>
 </div>

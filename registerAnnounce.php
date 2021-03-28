@@ -1,10 +1,13 @@
 <?php
-
-include('connection.php');
- 
+if(!isset($_SESSION)) 
+{
+    session_start(); 
+}
+include_once('connection.php');
+include_once('login.php');
  
   
-
+$user_id = $_SESSION['user_id'];
 $area = $_POST['area'];
 $process = $_POST['process'];
 $location = $_POST['location'];
@@ -19,7 +22,7 @@ $priceAnnounce = $_POST['price-announce'];
 $phone = $_POST['phone'];
 $titleAnnounce =  $_POST['title-announce'];
 $descriptionAnnounce = $_POST['announce-description'];
-$query = "INSERT INTO `user_announce`(`service_type`, `process_type`, `user_location`, `condition_pay`, `price`, `phone`, `announce_title`, `description`) VALUES ('$area','$process','$location','$rdoButton','$priceAnnounce','$phone','$titleAnnounce','$descriptionAnnounce')";
+$query = "INSERT INTO `user_announce`(`service_type`, `process_type`, `user_location`, `condition_pay`, `price`, `phone`, `announce_title`, `description`, `user_id`) VALUES ('$area','$process','$location','$rdoButton','$priceAnnounce','$phone','$titleAnnounce','$descriptionAnnounce', '$user_id')";
 $result = $strcon->query($query);
     if ($result === TRUE) {
         header("location: announces.php");
