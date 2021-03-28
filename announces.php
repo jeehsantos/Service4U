@@ -8,7 +8,7 @@ include('viewAnnounce.php');
 include('includes/modals.php');
  
  
-if(empty($_SESSION['id_user'])){
+if(empty($_SESSION['user_id'])){
   echo "<h5 class='message-alert' style='background-color:red; text-align: center; color: white; margin-bottom: 0px;'>You have to log in to include an announce</h5>";
 }else{
   include('includes/newService.php');

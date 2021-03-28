@@ -8,7 +8,7 @@
     $row_announce = mysqli_fetch_assoc($result);
      
     $price = $row_announce['price'] > 0 ? $row_announce['price'] :  "0.00 (Deal)";
-    
+    $_SESSION['annouce-title'] = $row_announce['announce_title'];
                    
                   
                           
@@ -43,9 +43,10 @@
   </div>
 </div>
 <form action="PHPEmailer/envia-email.php" method="POST">
-<textarea class="form-control" aria-label="With textarea"></textarea>
+<textarea class="form-control" name="message" aria-label="With textarea"></textarea>
+<button type="submit" onclick="MessageMeAlert()" class="btn btn-primary " name="message-btn" style="width: 150px;">Message me</button>
 </div>
-<button type="submit" class="btn btn-primary buttonSearch" style="width: 150px;">Message me</button>
+ 
 </div>
 </form>
 <div class="reviewAnnounce">
@@ -129,8 +130,18 @@ width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></i
 </div>
 </div>';
 	
-	
+
 	
 	echo $resultado;
      }
+     
 ?>
+
+<script>
+  function MessageMeAlert() {
+    setTimeout(function () {
+      alert("Your message has been sent !");
+  }, 2500);
+  }
+
+  </script>

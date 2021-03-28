@@ -3,19 +3,24 @@ if(!isset($_SESSION))
 {
     session_start(); 
 }
-include_once('connection.php');
-include_once('login.php');
- 
-  
-$user_id = $_SESSION['user_id'];
 
-//error_reporting(0);
-//$nome = utf8_encode($_POST['name']);
-//$sobrenome = utf8_encode($_POST['sobrenome']);
-//$email = utf8_encode($_POST['id_user']);
-//$mensagem = utf8_encode($_POST['mensagem']);
+$announce_title =  $_SESSION['annouce-title'];
+
+if(isset($_POST['message-btn'])):
+include_once('../connection.php');
+include_once('../login.php');
  
-/*
+//error_reporting(0);
+$user_id = $_SESSION['user_id'];
+$query = "SELECT * FROM users WHERE user_id = '$user_id'";
+$result = mysqli_query($strcon, $query);
+$data = mysqli_fetch_array($result);
+$nome = utf8_encode($data['fullName']);
+$phone = utf8_encode($data['phone']);
+$email = utf8_encode($data['email']);
+ $mensagem = utf8_encode($_POST['message']);
+ 
+
 require 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
@@ -34,18 +39,19 @@ $mail->Password = "xx6098xx";
 // Message config
 $mail->setFrom($mail->Username, $nome); //from
 $mail->addAddress($email,"blalalal"); //to
-$mail->Subject = "Service announce interest"; //subject email
+$mail->Subject = "$announce_title"; //subject email
 
-$conteudo_email = " Voce recebeu uma mensagem de $nome $sobrenome:
-<br> <br>
-Mensagem: Saaalveeeeeeeeeeeeeee parsaaaaaaaaaaaaaaaaaaa<br>
+$conteudo_email = "You received a message from: $nome :
+<br>Email contact: $email <br>
+Mensagem: $mensagem<br>
+Phone: $phone <br>
 ";
 $mail->IsHTML(true);
 $mail->Body = $conteudo_email;
 if ($mail->send()){
-    echo "E-mail enviado com sucesso!";
+    header('Location: ../announces.php');
 } else {
     echo "Falha ao enviar o e-mail: ". $mail->ErrorInfo;
 }
-*/
+endif;
 ?>

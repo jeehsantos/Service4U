@@ -104,7 +104,7 @@ include_once('login.php');
              
                <div class="row">
                 <div class="col-5"> 
-               <div class="imageProfileContainer">
+               <div class="imageProfileContainer"> 
                <form action="updateProfile.php" method="POST" enctype="multipart/form-data">
                   <div class="imageProfile img-fluid"><img id="imagem2" src="IMG/user-profile.jpg" alt="Profile image"> </div>
                   <div class="mb-3">
@@ -116,23 +116,23 @@ include_once('login.php');
                 <div class="col-7">
             
                   <div class="inputsProfileContainer">
-                    <input type="text" class="form-control" value="'.  $row_announce['fullName'] .'" placeholder="Full name" aria-describedby="addon-wrapping">
+                    <input type="text" name="fullName" class="form-control" value="'.  $row_announce['fullName'] .'" placeholder="Full name" aria-describedby="addon-wrapping">
                     
-                    <input type="text" class="form-control" value="'. $row_announce['email'] .'" placeholder="Email" aria-describedby="addon-wrapping">
+                    <input type="text" name="email" class="form-control" value="'. $row_announce['email'] .'" placeholder="Email" aria-describedby="addon-wrapping">
 
                     <div class="inputsProfileGroup">
-                      <input type="text" class="form-control" value="'. $row_announce['address'] .'"  placeholder="Address" aria-describedby="addon-wrapping">
-                      <input type="text" class="form-control" value="'. $row_announce['postCode'] .'" placeholder="Postcode" aria-describedby="addon-wrapping">
+                      <input type="text" name="address" class="form-control" value="'. $row_announce['address'] .'"  placeholder="Address" aria-describedby="addon-wrapping">
+                      <input type="text" name="postCode" class="form-control" value="'. $row_announce['postCode'] .'" placeholder="Postcode" aria-describedby="addon-wrapping">
                     </div>
                     <div class="inputsProfileGroup">
-                      <input type="text" class="form-control" value="'. $row_announce['phone'] .'" placeholder="Phone" aria-describedby="addon-wrapping">
-                      <input type="text" class="form-control" value="'. $row_announce['city'] .'" placeholder="City" aria-describedby="addon-wrapping">
+                      <input type="text" name="phone" class="form-control" value="'. $row_announce['phone'] .'" placeholder="Phone" aria-describedby="addon-wrapping">
+                      <input type="text" name="city" class="form-control" value="'. $row_announce['city'] .'" placeholder="City" aria-describedby="addon-wrapping">
                     </div>
-                    <input type="password" class="form-control" placeholder="Password" value="'. $row_announce['password'] .'" aria-describedby="addon-wrapping">
+                    <input type="password" name="password" class="form-control" placeholder="Password" value="'. $row_announce['password'] .'" aria-describedby="addon-wrapping">
                     <input type="text" class="form-control" placeholder="Confirm password"
                       aria-describedby="addon-wrapping">
                     <div class="buttonProfileContainer">
-                      <button type="button" class="btn btn-primary">Update</button>
+                      <button type="submit" name="updateMyProfile" class="btn btn-primary">Update</button>
                       </div>
                     </div>
                   </div>
@@ -143,183 +143,13 @@ include_once('login.php');
         </div>
       </div>
       ';?>
-      <!-- Modal My Announces -->
-      <div class="modalAnnounces">
-        <div class="modal fade" id="myAnnouncesModal" tabindex="-1" aria-labelledby="myAnnouncesModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="myAnnouncesModalLabel">My announces</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body myAnnouncesBody">
-
-                <div class="cardAnnounceContainer">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="infoCardContainer">
-                      <div class="colImage">
-                        <img src="IMG/images/22.JPG" alt="Announcers">
-                      </div>
-                      <div class="colData">
-                        <div class="cityName">Spreydon, Christchurch</div>
-                        <h5 class="card-title cardTitle">Lorem ipsum.</h5>
-                        <p class="cardText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur maiores
-                          eligendi, a nihil porro officiis fugiat ea ipsa. Quae, suscipit.</p>
-                        <div class="cardRate">
-                          <p class="card-text"><small class="text-muted">94%</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="actionsGroupIcons">
-                    <img src="IMG/pencil.png" alt="edit">
-                    <img src="IMG/close.png" alt="delete">
-                  </div>
-                </div>
-
-                <div class="cardAnnounceContainer">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="infoCardContainer">
-                      <div class="colImage">
-                        <img src="IMG/22.JPG" alt="Announcers">
-                      </div>
-                      <div class="colData">
-                        <div class="cityName">Spreydon, Christchurch</div>
-                        <h5 class="card-title cardTitle">Lorem ipsum.</h5>
-                        <p class="cardText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur maiores
-                          eligendi, a nihil porro officiis fugiat ea ipsa. Quae, suscipit.</p>
-                        <div class="cardRate">
-                          <p class="card-text"><small class="text-muted">94%</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="actionsGroupIcons">
-                    <img src="IMG/pencil.png" alt="edit">
-                    <img src="IMG/close.png" alt="delete">
-                  </div>
-                </div>
-
-                <div class="cardAnnounceContainer">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="infoCardContainer">
-                      <div class="colImage">
-                        <img src="IMG/22.JPG" alt="Announcers">
-                      </div>
-                      <div class="colData">
-                        <div class="cityName">Spreydon, Christchurch</div>
-                        <h5 class="card-title cardTitle">Lorem ipsum.</h5>
-                        <p class="cardText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur maiores
-                          eligendi, a nihil porro officiis fugiat ea ipsa. Quae, suscipit.</p>
-                        <div class="cardRate">
-                          <p class="card-text"><small class="text-muted">94%</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="actionsGroupIcons">
-                    <img src="IMG/pencil.png" alt="edit">
-                    <img src="IMG/close.png" alt="delete">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal References -->
-      <div>
-        <div class="modal fade" id="referencesModal" tabindex="-1" aria-labelledby="referencesModal" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title referencesTitle" id="referencesModalLabel">References received</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-
-                <div class="myComment">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="modalReferenceContainer">
-                      <div class="referenceImage">
-                        <img src="IMG/user-profile.jpg" alt="Announcers">
-                      </div>
-                      <div class="referenceData">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="likesContainer">
-                    <img src="IMG/facebookLike.png" alt="like">
-                    <img src="IMG/facebookDislike.png" alt="dislike">
-                  </div>
-                </div>
-
-                <div class="myComment">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="modalReferenceContainer">
-                      <div class="referenceImage">
-                        <img src="IMG/AS.JPG" alt="Announcers">
-                      </div>
-                      <div class="referenceData">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="likesContainer">
-                    <img src="IMG/facebookLike.png" alt="like">
-                    <img src="IMG/facebookDislike.png" alt="dislike">
-                  </div>
-                </div>
-
-                <div class="myComment">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="modalReferenceContainer">
-                      <div class="referenceImage">
-                        <img src="IMG/12.JPG" alt="Announcers">
-                      </div>
-                      <div class="referenceData">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="likesContainer">
-                    <img src="IMG/facebookLike.png" alt="like">
-                    <img src="IMG/facebookDislike.png" alt="dislike">
-                  </div>
-                </div>
-
-                <div class="myComment">
-                  <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="modalReferenceContainer">
-                      <div class="referenceImage">
-                        <img src="IMG/user-profile.jpg" alt="Announcers">
-                      </div>
-                      <div class="referenceData">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="likesContainer">
-                    <img src="IMG/facebookLike.png" alt="like">
-                    <img src="IMG/facebookDislike.png" alt="dislike">
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+      <!-- 2. Modal My Announces -->
+      <?php include('includes/modals.php');?>
+      
+ 
+      <!-- 3. Account modal My References -->
+      <?php include('includes/modals.php');?>
+     
     </section>
 
 

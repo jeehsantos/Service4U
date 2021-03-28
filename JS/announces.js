@@ -18,3 +18,5 @@ $('#viewAnnounce').modal('show');
         } 
     });
 });
+
+ 

@@ -20,12 +20,12 @@ if(isset($_POST['btn-enter'])):
                 $data = mysqli_fetch_array($result);
                 if($data['role_id'] == 1 ){
                     $_SESSION['logged'] = true;
-                    $_SESSION['id_user'] = $data['email'];
+                    $_SESSION['email_user'] = $data['email'];
                     $_SESSION['name'] = $data['fullName'];
                     header('Location: Admin/index.php');
                 }else{ 
                 $_SESSION['logged'] = true;
-                $_SESSION['id_user'] = $data['email'];
+                $_SESSION['email_user'] = $data['email'];
                 $_SESSION['user_id'] = $data['user_id'];
                 header('Location: account.php');
             }
