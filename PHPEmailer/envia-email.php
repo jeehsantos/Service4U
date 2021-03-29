@@ -4,7 +4,7 @@ if(!isset($_SESSION))
     session_start(); 
 }
 
-$announce_title =  $_SESSION['annouce-title'];
+//$announce_title =  $_SESSION['annouce-title'];
 
 if(isset($_POST['message-btn'])):
 include_once('../connection.php');

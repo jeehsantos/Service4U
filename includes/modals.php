@@ -33,7 +33,9 @@
 
                         </div>
                         <div id="forgot-password">
-                            <a href="contact.php">Forgot Password?</a>
+                            <a href="contact.php">Forgot Password?</a><br>
+                            <a href="contact.php" data-bs-toggle="modal" data-bs-target="#register-panel"
+                            href="#">New? Join us ! </a>
                         </div>
                     </div>
 

@@ -56,10 +56,12 @@ function limit_phrase($text , $limit, $break = true) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-     
+  <link rel="stylesheet" href="CSS/announces.css" />
+  <link rel="shortcut icon" href="http://localhost/GitHub/Service4U/IMG/service4u.ico" type="image/x-icon">   
   <title>Announces</title>
   <script type="module" src="main.js"></script>
-  <link rel="stylesheet" href="CSS/announces.css" />
+ 
+   
 </head>
 
 <body>
@@ -195,20 +197,21 @@ function limit_phrase($text , $limit, $break = true) {
     <div class="container-fluid footerContainer">
       <img src="IMG/LSSmallWhite.png" alt="Logo service4u">
       <div class="footerNavContainer" id="navbarNav">
-        <ul class="footerNav">
-          <li class="nav-item">
-            <a class="nav-link navLink" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navLink" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navLink" href="#">Policies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navLink" href="#">Contact us</a>
-          </li>
-        </ul>
+      <ul class="footerNav">
+            <li class="nav-item">
+              <a class="nav-link navLink" href="aboutus.php">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navLink" href="announces.php">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navLink" data-bs-toggle="modal" data-bs-target="#policy-panel"
+                            href="#">Policies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navLink" href="contact.php">Contact us</a>
+            </li>
+          </ul>
       </div>
     </div>
   </nav>

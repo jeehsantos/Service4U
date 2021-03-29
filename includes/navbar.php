@@ -1,4 +1,4 @@
-<body id="grad-body">
+
     <header>
         <nav class="navbar" id="navigation-bar">
             <div class="container-fluid">

@@ -22,6 +22,7 @@
                 <a class="nav-link" id="navigation-link" href="./contact.php">Contact Us</a>
             </li>
         </ul>
+        
     </div>
 </div>
 

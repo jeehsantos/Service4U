@@ -6,7 +6,12 @@ if(!isset($_SESSION))
 
 require_once('connection.php');
 include('includes/header.php');
-include('includes/navbar.php');
+if(isset($_SESSION['logged'])){
+    include('includes/loggednavbar.php');
+}else{
+    
+    include('includes/navbar.php');
+}
 include('includes/modals.php');
 include('includes/footer.php');
 include('includes/scripts.php');

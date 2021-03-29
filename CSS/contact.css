@@ -148,6 +148,7 @@ body {
 }
 
 .contactUsView {
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,7 +210,7 @@ textarea {
 }
 
 .navFooter {
-  background-color: #0068ff !important;
+  background-color:#0068ff !important;
   color: #ffffff;
 }
 

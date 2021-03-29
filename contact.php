@@ -1,7 +1,13 @@
 <?php
+if(!isset($_SESSION)) 
+{
+    session_start(); 
+}
+include_once('connection.php');
+include_once('login.php');
 include('includes/modals.php');
-
 ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,144 +20,25 @@ include('includes/modals.php');
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/contact.css" />
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="shortcut icon" href="localhost/GitHub/Service4U/IMG/service4u.ico" type="image/x-icon">
   <title>Service4u</title>
  
 </head>
 
 <body id="root">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navTop">
-      <div class="container-fluid navBarImage">
-        <img src="IMG/LSFullWhite.png" alt="Logo service4u">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse headNav" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link navLink"  aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navLink" href="#" data-bs-target="#login-panel" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navLink" href="#" data-bs-toggle="modal" data-bs-target="#register-panel">Register</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <?php 
+   if(isset($_SESSION['logged'])){
+    include('includes/loggednavbar.php');
+    }else{
+    
+    include('includes/navbar.php');
+  }
+  ?>
   </header>
-  <!-- Login modal -->
-  <div class="modal fade" id="login-panel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content popup-login">
-        <div class="modal-header popup-login-text">
-
-          <h5 class="modal-title">Login</h5>
-
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <?php 
-              if(!empty($errors)):
-                  foreach($errors as $error):
-                      echo $error;
-                  endforeach;
-              endif;
-              ?>
-        </div>
-
-        <div class="modal-body">
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-            <div class="row modal-field">
-              <div class="col">
-                <input type="email" name="email" class="form-control" id="email-login" aria-describedby="emailHelp"
-                  placeholder="Enter email" required>
-              </div>
-            </div>
-            <div class="row modal-field">
-              <div class="col">
-                <input type="password" name="password" class="form-control" id="password-input" placeholder="Password"
-                  required>
-
-              </div>
-              <div id="forgot-password">
-                <a href="#">Forgot Password?</a>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-
-              <div class="row" id="teste">
-                <div class="col">
-                  <input type="checkbox" class="form-check-input" id="remember-login">
-
-
-                  <label class="form-check-label " for="remember-login">Remember me</label>
-                </div>
-
-                <div class="col">
-                  <button type="submit" class="btn btn-primary" name="btn-enter">Login</button>
-                </div>
-              </div>
-
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Registration modal -->
-  <div class="modal fade" id="register-panel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <img src="./IMG/user-profile-sm.jpg" alt="profile-user">
-          <h5 class="modal-title" id="register-panel">Register</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!--Form to register a user-->
-          <form action="registration.php" method="POST">
-            <div class="row modal-field">
-              <div class="col mt-0">
-                <input type="text" name="name" class="form-control" id="name-input" aria-describedby="FullName"
-                  placeholder="Full name" required>
-              </div>
-            </div>
-            <div class="row modal-field">
-              <div class="col">
-                <input type="email" name="email" class="form-control" id="email-input" aria-describedby="emailHelp"
-                  placeholder="Email" required>
-              </div>
-            </div>
-            <div class="row modal-field">
-              <div class="col">
-                <input type="password" name="password" class="form-control" id="pass-input" aria-describedby="emailHelp"
-                  placeholder="Password" required>
-              </div>
-            </div>
-            <div class="row modal-field">
-              <div class="col">
-                <input type="password" name="repassword" class="form-control" id="confirm-pass-input"
-                  placeholder="Confirm password" required>
-
-              </div>
-
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-
-              <button type="submit" class="btn btn-primary btn-size">Register</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <section class="contactUsContainer">
-    <div class="contactUsView">
+    <div class="contactUsView" style="padding-top: 50px;">
       <div class="formContainer">
         <form action="https://formspree.io/f/mlearjqo" method="POST" id="my-form">
           <h3>Contact us</h3>
@@ -200,13 +87,14 @@ include('includes/modals.php');
               <a class="nav-link navLink" href="aboutus.php">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navLink" href="#">Services</a>
+              <a class="nav-link navLink" href="announces.php">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navLink" href="#">Policies</a>
+              <a class="nav-link navLink" data-bs-toggle="modal" data-bs-target="#policy-panel"
+                            href="#">Policies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navLink" href="#">Contact us</a>
+              <a class="nav-link navLink" href="contact.php">Contact us</a>
             </li>
           </ul>
         </div>

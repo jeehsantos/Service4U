@@ -7,12 +7,18 @@ if(!isset($_SESSION))
 
 require_once('connection.php');
 include('includes/header.php');
-include('includes/navbar.php');
+ 
+if(isset($_SESSION['logged'])){
+    include('includes/loggednavbar.php');
+}else{
+    
+    include('includes/navbar.php');
+}
 include('includes/modals.php');
 include('includes/footer.php');
 include('includes/scripts.php');
 ?>  
-
+<body id="grad-body">
     <!-- First section having the input field to search the services-->
     <section id="search-sec">
         <div class="container">

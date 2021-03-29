@@ -27,7 +27,7 @@ if(isset($_POST['btn-enter'])):
                 $_SESSION['logged'] = true;
                 $_SESSION['email_user'] = $data['email'];
                 $_SESSION['user_id'] = $data['user_id'];
-                header('Location: account.php');
+                header('Location: index.php');
             }
             else:
                 $errors[] = "<li>User and password does not match</li>";
