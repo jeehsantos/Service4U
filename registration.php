@@ -1,7 +1,8 @@
 <?php
 session_start();
-include('index.php');
 include('connection.php');
+include('index.php');
+ 
  
  
 

@@ -36,7 +36,7 @@ if(isset($_POST['btn-enter'])):
             
         else:
             $errors[] = "<li>User does not exist</li>";
-            header('Location: panel.php');
+            echo "Something went wrong"; 
              
         endif;
         

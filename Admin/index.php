@@ -9,6 +9,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
     integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
   </script>
@@ -135,6 +136,60 @@ $user_name = $_SESSION['name'];
                 <h3 class="panel-title main-color-bg">Posts</h3>
               </div>
               <div class="panel-body">
+              <form >
+              <div class="row">
+                 <h2 class="text-center">Announce itens</h2><hr>
+                    <div class="form-group col-xs-4">
+                        <label for="sel1">Area list:</label>
+                        <select class="form-control" id="sel1">
+                          <option>Autos</option>
+                          <option>Classes</option>
+                          <option>Renovation</option>
+                          <option>Events</option>
+                          <option>Tech assistance</option>
+                          <option>Design and Technology</option>
+                        </select>
+                    
+                    </div>
+                     
+                    <div class="col-xs-4">
+                    <label for="ex3">Input area: </label>
+                    <input class="form-control" id="ex3" type="text">
+                    
+                  </div>  
+                  <div class="col-xs-2">
+                  <label for="include"></label>
+                  <button class="form-control btn-danger" style="margin-top:5px;" id="include" type="submit">Include</button>
+                </div>      
+              </div>  
+              <div class="row">
+                 
+                    <div class="form-group col-xs-4">
+                        <label for="sel1">Process list:</label>
+                        <select class="form-control" id="sel1">
+                          <option>Construction</option>
+                          <option>Instalation</option>
+                          <option>Repair and Renovation</option>
+                          <option>General Services</option>
+                          <option>Housing</option>
+                          <option>Academic</option>
+                          <option>sport</option>
+                          <option>Staff and Support</option>
+                          <option>Technology</option>
+                        </select>
+                    
+                    </div>
+                    <div class="col-xs-4">
+                    <label for="ex3">Input process: </label>
+                    <input class="form-control" id="ex3" type="text">
+                    
+                  </div>  
+                  <div class="col-xs-2">
+                  <label for="include"></label>
+                  <button class="form-control btn-danger" style="margin-top:5px;" id="include" type="submit">Include</button>
+                </div>      
+              </div>  
+              <hr>
                 <div class="row">
                   <div class="col-md-12">
                     <input class="form-control" type="text" placeholder="Filter Posts...">

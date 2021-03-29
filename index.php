@@ -67,7 +67,8 @@ include('includes/scripts.php');
                             <h3 class="card-title">Gardening</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
-                            <span> Read More...</span>
+                            <a href="#">Read More...</a>
+                             
                         </div>
                     </div>
 
@@ -79,7 +80,7 @@ include('includes/scripts.php');
                             <h3 class="card-title">Electrician</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
-                            <span class="white-text"> Read More...</span>
+                            <a href="#" class="text-white">Read More...</a>
                         </div>
                     </div>
                     <div class="card text-center card-services " style="margin-top: 20px;">
@@ -90,7 +91,7 @@ include('includes/scripts.php');
                             <h3 class="card-title">Plumbing</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
-                            <span> Read More...</span>
+                            <a href="#">Read More...</a>
                         </div>
                     </div>
                     <div class="card text-center card-services " style="margin-top: 20px;">
@@ -101,7 +102,7 @@ include('includes/scripts.php');
                             <h3 class="card-title">Mechanic</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
-                             <span> Read More...</span>
+                            <a href="#">Read More...</a>
                         </div>
                     </div>
 
@@ -113,7 +114,7 @@ include('includes/scripts.php');
                             <h3 class="card-title">Tutors</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
-                            <span> Read More...</span>       
+                            <a class="text-white" href="#">Read More...</a>       
                         
                         </div>
                     </div>
@@ -124,8 +125,9 @@ include('includes/scripts.php');
                                 style="height: 50px; width: 50px;" alt="Construction icon">
                             <h3 class="card-title">Construction</h3>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            <a href="#">Read More...</a>
                             </p>
-                            <span class="white-text"> Read More...</span>
+                             
                         </div>
                     </div>
 
@@ -144,7 +146,7 @@ include('includes/scripts.php');
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4500,
     
 });
 
