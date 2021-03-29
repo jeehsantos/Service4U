@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="col">
-                                <button type="submit" class="btn btn-primary" name="btn-enter">Login</button>
+                                <button type="submit" class="btn btn-primary"  name="btn-enter">Login</button>
                             </div>
                         </div>
 
@@ -171,8 +171,8 @@
                 <div class="cardAnnounceContainer">
                   <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="infoCardContainer">
-                      <div class="colImage">
-                        <img src="IMG/images/22.JPG" alt="Announcers">
+                      <div class="colImage" >
+                        <img src="IMG/22.JPG"  alt="Announcers">
                       </div>
                       <div class="colData">
                         <div class="cityName">Spreydon, Christchurch</div>
@@ -297,7 +297,7 @@
                         <img src="IMG/12.JPG" alt="Announcers">
                       </div>
                       <div class="referenceData">
-                        <p>Lorem ipsum dddddolor sit amet, consectetur adipiscing elit,
+                        <p>Lorem ipsum ddolor sit amet, consectetur adipiscing elit,
                           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                       </div>
                     </div>
@@ -325,7 +325,26 @@
                     <img src="IMG/facebookDislike.png" alt="dislike">
                   </div>
                 </div>
-
+                <!--Have a new reference-->
+                <div class="haveReferenceContainer">
+                  <p>Have a reference</p>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false"
+                    aria-controls="collapseExample">Search</button>
+                </div>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body collapseReferenceBody">
+                    <div class="newReferenceData">
+                      <h6>New reference</h6>
+                      <input type="text" class="form-control" placeholder="Reference, name or email"
+                        aria-describedby="addon-wrapping">
+                      <div class="newReferenceAdd">
+                        <button type="button" class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               <!--End have a new reference-->    
 
               </div>
             </div>

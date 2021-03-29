@@ -1,5 +1,9 @@
 <?php
      if(isset($_POST['announce_id'])){
+      if(!isset($_SESSION)) 
+      {
+          session_start(); 
+      }
         include_once "connection.php";
         include_once "PHPEmailer/envia-email.php";
         $resultado = '';   
@@ -8,8 +12,8 @@
     $row_announce = mysqli_fetch_assoc($result);
      
     $price = $row_announce['price'] > 0 ? $row_announce['price'] :  "0.00 (Deal)";
-    $_SESSION['annouce-title'] = $row_announce['announce_title'];
-                   
+    $_SESSION['announce-id'] = $row_announce['announce_id'];
+    $_SESSION['announce-title'] = $row_announce['announce_title'];              
                   
                           
     $resultado .= '

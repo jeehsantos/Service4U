@@ -39,8 +39,8 @@
                   <hr class="dropdown-divider">
                 </li>
 
-                <img src="IMG/LSFullWhite.png" alt="logo service4u" width="100px text-center">
-
+                <a href="./index.php" ><img src="IMG/LSFullWhite.png" alt="logo service4u" width="100px text-center">
+                </a>
 
               </ul>
             </li>

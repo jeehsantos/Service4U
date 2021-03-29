@@ -18,9 +18,10 @@ if(isset($_POST['updateMyProfile'])){
             $city = $_POST['city'];
             $password =  $_POST['password'];
             $query = "UPDATE `users` SET `fullName`='$fullName',`email`='$email',`address`='$address',`postCode`=$postCode,`phone`=$phone,`city`='$city',`password`= md5('{$password}') WHERE `user_id` = $user_id";
-            echo "$query";
+            
             $result = mysqli_query($strcon, $query);  
             $strcon->close();
+            header('location: index.php');
         }
 }
             

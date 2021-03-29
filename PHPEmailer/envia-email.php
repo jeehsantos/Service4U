@@ -4,23 +4,24 @@ if(!isset($_SESSION))
     session_start(); 
 }
 
-//$announce_title =  $_SESSION['annouce-title'];
+ 
 
 if(isset($_POST['message-btn'])):
 include_once('../connection.php');
 include_once('../login.php');
- 
+$announce_title =  $_SESSION['announce-title'];
 //error_reporting(0);
-$user_id = $_SESSION['user_id'];
-$query = "SELECT * FROM users WHERE user_id = '$user_id'";
+//Look to the announce owner
+$announce_id = $_SESSION['announce-id'];
+ 
+$query = "SELECT u.*, a.announce_id, a.user_id FROM user_announce a INNER JOIN users u ON u.user_id = a.user_id HAVING a.announce_id =  '$announce_id'";
 $result = mysqli_query($strcon, $query);
 $data = mysqli_fetch_array($result);
 $nome = utf8_encode($data['fullName']);
 $phone = utf8_encode($data['phone']);
 $email = utf8_encode($data['email']);
- $mensagem = utf8_encode($_POST['message']);
+$mensagem = utf8_encode($_POST['message']);
  
-
 require 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
@@ -38,14 +39,12 @@ $mail->Password = "xx6098xx";
 
 // Message config
 $mail->setFrom($mail->Username, $nome); //from
-$mail->addAddress($email,"blalalal"); //to
+$mail->addAddress($email,"not-reply"); //to
 $mail->Subject = "$announce_title"; //subject email
 
-$conteudo_email = "You received a message from: $nome :
-<br>Email contact: $email <br>
-Mensagem: $mensagem<br>
-Phone: $phone <br>
-";
+$conteudo_email = "You have received a new message from your announce: ". $announce_title .
+
+"<br><br>Message: <br><br> $mensagem";
 $mail->IsHTML(true);
 $mail->Body = $conteudo_email;
 if ($mail->send()){

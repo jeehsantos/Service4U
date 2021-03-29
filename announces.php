@@ -76,7 +76,7 @@ function limit_phrase($text , $limit, $break = true) {
         <div class="collapse navbar-collapse headNav" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link navLink" aria-current="page" href="#">Home</a>
+              <a class="nav-link navLink" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navLink" id="navigation-link" data-bs-toggle="modal" data-bs-target="#login-panel"
@@ -141,7 +141,46 @@ function limit_phrase($text , $limit, $break = true) {
               }elseif($filter == 2){
                 $query = "SELECT * FROM user_announce ORDER BY reviews ASC";  
               }else{*/
-                $query = "SELECT * FROM user_announce";
+                if(isset($_POST['search-btn'])){
+                  $service_search = $_POST['search-service'];
+                   
+                  $query = "SELECT * FROM user_announce WHERE `announce_title` LIKE '%$service_search%'";
+                 
+                  $result = mysqli_query($strcon, $query);        
+                        
+                  if(mysqli_num_rows($result) > 0){       
+                        if (!$result) die($strcon->error);
+                        while($row_announce = mysqli_fetch_assoc($result)){
+                          //Identfy the ID 
+                          $id = $row_announce['announce_id'];
+                          
+                        echo '<div class="cardsContainer " >
+                        <div class="card mb-3 view_data" id="'. $id .  '" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <div class="infoCardContainer">
+                            <div class="colImage">
+                              <img style="height: 150px;" src="IMG/Captura.JPG" alt="Announcers">
+                            </div>
+                            <div class="colData">
+                              <div class="cityName">' . $row_announce['user_location'] . '</div>';
+                          
+                        echo '<h5 class="card-title cardTitle">' . $row_announce['announce_title'] . '</h5>';
+                        
+                        echo '<p class="cardText">' . limit_phrase($row_announce['description'],150) . '</p>
+              <div class="cardRate">
+                <p class="card-text"><small class="text-muted">94%</small></p>
+              </div>
+            </div>
+          </div>
+        </div>';}}else{
+          echo ' <img style="height: 30%;width:30%;" src="IMG/not_found.png"><br>
+          <h2>Sorry, we dont have this service at the moment.</h2>
+           ';
+
+        }
+
+                }else{
+                  
+                $query = "SELECT * FROM user_announce ORDER BY announce_id DESC";
                 $result = mysqli_query($strcon, $query);        
                         
                          
@@ -170,10 +209,11 @@ function limit_phrase($text , $limit, $break = true) {
         </div>';
               
               }
+            }
                $result->close();
                $strcon->close();
               
-
+          
               ?>
 
 
