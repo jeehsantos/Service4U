@@ -13,25 +13,13 @@
               <div class="groupServiceInputs">
                 <form action="registerAnnounce.php" method="POST"> 
               <select class="form-select selectAreas" name="area" aria-label="Default select example">
-                  <option selected >Area</option>
-                  <option value="1">Autos</option>
-                  <option value="2">Classes</option>
-                  <option value="3">Renovation</option>
-                  <option value="4">Events</option>
-                  <option value="5">Tech assistance</option>
-                  <option value="6">Design and technology</option>
+                <option selected >Area</option>
+                  <?php include('Admin/includes/selectList.php'); ?>
+                  
                 </select>
                 <select class="form-select selectAreas" name="process" aria-label="Default select example">
                   <option selected>Process area</option>
-                  <option value="1">Construction</option>
-                  <option value="2">Installation</option>
-                  <option value="3">Repair and renovation</option>
-                  <option value="4">General services</option>
-                  <option value="5">Housing</option>
-                  <option value="6">Academic</option>
-                  <option value="7">sport</option>
-                  <option value="8">Staff and support</option>
-                  <option value="9">technology</option>
+                  <?php include('Admin/includes/selectProcess.php'); ?>
                 </select>
                 <input type="text" name="location" class="form-control" placeholder="Location" aria-label="Username"
                   aria-describedby="addon-wrapping">

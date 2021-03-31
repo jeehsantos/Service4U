@@ -46,10 +46,19 @@
     
   </div>
 </div>
-<form action="PHPEmailer/envia-email.php" method="POST">
-<textarea class="form-control" name="message" aria-label="With textarea"></textarea>
-<button type="submit" onclick="MessageMeAlert()" class="btn btn-primary " name="message-btn" style="width: 150px;">Message me</button>
-</div>
+<form action="PHPEmailer/envia-email.php" method="POST">';
+if(empty($_SESSION['user_id'])){
+  $resultado .='<textarea class="form-control" name="message" aria-label="With textarea" disabled></textarea>
+  <button type="submit" disabled onclick="MessageMeAlert()" class="btn btn-primary " name="message-btn" style="width: 150px;">Message me</button>
+  <span style="color: white;background-color: rgba(236, 47, 47, 0.781);border-radius: 3px;font-size: 14px;padding: 2px;">You have to login to contact the announcer</span>';
+  
+ }else{
+  $resultado .= ' <textarea class="form-control" name="message" aria-label="With textarea"></textarea>
+  <button type="submit" onclick="MessageMeAlert()" disabled class="btn btn-primary " name="message-btn" style="width: 150px;">Message me</button>';
+  
+ } 
+ 
+$resultado .= '</div>
  
 </div>
 </form>
@@ -118,8 +127,15 @@ width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></i
 <div class="referenceImage">
   <img src="IMG/user-profile.jpg" alt="Announcers">
 </div>
-<div class="referenceData">
-  <textarea class="form-control" aria-label="With textarea"></textarea>
+<div class="referenceData">';
+if(empty($_SESSION['user_id'])){
+  $resultado .='<textarea class="form-control" disabled aria-label="With textarea"  placeholder ="Register to drop a review"></textarea>';
+  
+ }else{
+  $resultado .= ' <textarea class="form-control" aria-label="With placeholder ="to textarea"></textarea>';
+  
+ }  
+ $resultado .='   
 </div>
 <div class="referenceRate">
   <p class="card-text"><small class="text-muted">94%</small></p>

@@ -17,14 +17,17 @@
                         echo $error;
                     endforeach;
                 endif;
-                ?>
+                ?> 
                 </div>
-
+                 
                 <div class="modal-body">
      
+                 
                     <form action="login.php" method="POST">
                         <div class="row modal-field">
                             <div class="col">
+                                
+                <p>teste</p>
                                 <input type="email" name="email" class="form-control" id="email-login"
                                     aria-describedby="emailHelp" placeholder="Enter email" required>
                             </div>

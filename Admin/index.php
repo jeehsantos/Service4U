@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,8 @@
   <title>Admin Area | Dashboard</title>
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="../CSS/account.css" rel="stylesheet">
+  
   <link href="css/style.css" rel="stylesheet">
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
@@ -74,7 +77,7 @@ $user_name = $_SESSION['name'];
           <li class="active"><a href="#tab_a" data-toggle="pill"><span class="glyphicon glyphicon-user"
                 aria-hidden="true"></span> Users</span></a></li>
           <li class="bg-light"><a href="#tab_b" data-toggle="pill"><span class="glyphicon glyphicon-comment"
-                aria-hidden="true"></span> Posts</span></a></li>
+                aria-hidden="true"></span> Service announces</span></a></li>
 
         </ul>
         <div class="tab-content col-md-10">
@@ -93,39 +96,14 @@ $user_name = $_SESSION['name'];
                 <br>
                 <table class="table table-striped table-hover">
                   <tr>
-                    <th>Name</th>
+                    <th>Id</th>
+                    <th>Full name</th>
                     <th>Email</th>
                     <th>City</th>
                     <th></th>
                   </tr>
-                  <tr>
-                    <td>Jill Smith</td>
-                    <td>jillsmith@gmail.com</td>
-                    <td>Christchurch</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td>Eve Jackson</td>
-                    <td>ejackson@yahoo.com</td>
-                    <td>Christchurch</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td>Stephanie Landon</td>
-                    <td>landon@yahoo.com</td>
-                    <td>Queenstown</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td>Mike Johnson</td>
-                    <td>mjohnson@gmail.com</td>
-                    <td>Cromwell</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
+                  <?php include('listUsers.php');?>
+                 
                 </table>
               </div>
             </div>
@@ -142,12 +120,7 @@ $user_name = $_SESSION['name'];
                     <div class="form-group col-xs-4">
                         <label for="sel1">Area list:</label>
                         <select class="form-control" id="sel1">
-                          <option>Autos</option>
-                          <option>Classes</option>
-                          <option>Renovation</option>
-                          <option>Events</option>
-                          <option>Tech assistance</option>
-                          <option>Design and Technology</option>
+                         <?php include('includes/selectList.php'); ?>
                         </select>
                     
                     </div>
@@ -167,15 +140,7 @@ $user_name = $_SESSION['name'];
                     <div class="form-group col-xs-4">
                         <label for="sel1">Process list:</label>
                         <select class="form-control" id="sel1">
-                          <option>Construction</option>
-                          <option>Instalation</option>
-                          <option>Repair and Renovation</option>
-                          <option>General Services</option>
-                          <option>Housing</option>
-                          <option>Academic</option>
-                          <option>sport</option>
-                          <option>Staff and Support</option>
-                          <option>Technology</option>
+                        <?php include('includes/selectProcess.php'); ?>
                         </select>
                     
                     </div>
@@ -198,39 +163,14 @@ $user_name = $_SESSION['name'];
                 <br>
                 <table class="table table-striped table-hover">
                   <tr>
-                    <th>Title</th>
-                    <th>Local</th>
-                    <th>Review</th>
+                    <th>Id</th>
+                    <th>Announce Title</th>
+                    <th>Location</th>
+                    <th>Reviews</th>
                     <th></th>
                   </tr>
-                  <tr>
-                    <td>Announce Post 1</td>
-                    <td>Horby, Christchurch</td>
-                    <td>79%</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td>Announce Post 2</td>
-                    <td>CBD, Christchurch</td>
-                    <td>91%</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td>Announce Post 3</td>
-                    <td>Rolleston, Christchurch</td>
-                    <td>100%</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
-                  <tr>
-                    <td>Announce Post 4</td>
-                    <td>Center, Queenstown</span></td>
-                    <td>95%</td>
-                    <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger"
-                        href="#">Delete</a></td>
-                  </tr>
+                  <?php include('listServices.php');?>
+                 
                 </table>
               </div>
             </div>
@@ -244,7 +184,65 @@ $user_name = $_SESSION['name'];
 
   <hr>
   </hr>
+<!-- teste --> 
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#profileModal">Open Modal</button>
 
+  <!-- Modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header modalHeader">
+                <h5 class="modal-title" id="profileModalLabel">My profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body modalProfileBody">
+             
+               <div class="row">
+                <div class="col-5"> 
+               <div class="imageProfileContainer"> 
+               <form action="updateProfile.php" method="POST" enctype="multipart/form-data">
+                  <div class="imageProfile img-fluid"><img id="imagem2" src="IMG/user-profile.jpg" alt="Profile image"> </div>
+                  <div class="mb-3">
+  <label for="formFileSm" class="form-label">Upload image</label>
+  <input class="form-control form-control-sm"  type="file" name="imagem" id="imagem" onchange="previewImagem()">
+            </div>
+</div>
+                </div>
+                <div class="col-7">
+            
+                  <div class="inputsProfileContainer">
+                    <input type="text" name="fullName" class="form-control" value="'.  $row_announce['fullName'] .'" placeholder="Full name" aria-describedby="addon-wrapping">
+                    
+                    <input type="text" name="email" class="form-control" value="'. $row_announce['email'] .'" placeholder="Email" aria-describedby="addon-wrapping" required>
+
+                    <div class="inputsProfileGroup">
+                      <input type="text" name="address" class="form-control" value="'. $row_announce['address'] .'"  placeholder="Address" aria-describedby="addon-wrapping" required>
+                      <input type="text" name="postCode" class="form-control" value="'. $row_announce['postCode'] .'" placeholder="Postcode" aria-describedby="addon-wrapping" required>
+                    </div>
+                    <div class="inputsProfileGroup">
+                      <input type="text" name="phone" class="form-control" value="'. $row_announce['phone'] .'" placeholder="Phone" aria-describedby="addon-wrapping" required>
+                      <input type="text" name="city" class="form-control" value="'. $row_announce['city'] .'" placeholder="City" aria-describedby="addon-wrapping" required>
+                    </div>
+                    <input type="password" name="password" class="form-control" placeholder="Password" value="'. $row_announce['password'] .'" aria-describedby="addon-wrapping">
+                    <input type="password" class="form-control" placeholder="Confirm password"
+                      aria-describedby="addon-wrapping">
+                    <div class="buttonProfileContainer">
+                      <button type="submit" name="updateMyProfile" class="btn btn-primary">Update</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+</div>
+
+<!-- termina teste -->
   </div><!-- tab content -->
   </div><!-- end of container -->
   <!-- Nav tabs -->
@@ -259,7 +257,6 @@ $user_name = $_SESSION['name'];
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
 

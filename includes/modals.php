@@ -15,10 +15,10 @@
                     endforeach;
                 endif;
                 ?>
+                
+                 
             </div>
-
             <div class="modal-body">
-                <!-- <form action=" < ?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> -->
                 <form action="./login.php" method="POST">
                     <div class="row modal-field">
                         <div class="col">
@@ -71,6 +71,7 @@
                 <h5 class="modal-title" id="register-panel">Register</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+             
             <div class="modal-body">
                 <!--Form to register a user-->
                 <form action="registration.php" method="POST">

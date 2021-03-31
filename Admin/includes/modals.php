@@ -1,63 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navTop">
-      <div class="container-fluid navBarImage">
-        <img src="IMG/LSFullWhite.png" alt="Logo service4u">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse headNav" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link text-light bg-primary dropdown-toggle active dropDownAccount" href="#"
-                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img
-                  src="IMG/user.png"
-                  alt="profile-img" style="width: 30px;">
-                Account
-              </a>
-              <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
 
-                <li><a class="dropdown-item text-light" id="teste-drop" href="#" data-bs-toggle="modal"
-                    data-bs-target="#profileModal"><img
-                      src="./IMG/user-edit.png"
-                      alt="profile-img" style="width: 30px; margin-right: 20px">Edit profile</a></li>
-
-                <li><a class="dropdown-item text-light" href="#" data-bs-toggle="modal"
-                    data-bs-target="#myAnnouncesModal"><img
-                      src="./IMG/megaphone.png"
-                      alt="profile-img" style="width: 30px; margin-right: 20px">My announces</a></li>
-
-                <li><a class="dropdown-item text-light" href="#" data-bs-toggle="modal"
-                    data-bs-target="#referencesModal"><img
-                      src="IMG/plumbing.png"
-                      alt="profile-img" style="width: 30px; margin-right: 20px">References</a></li>
-
-                <li><a class="dropdown-item text-light" href="logout.php"><img
-                      src="IMG/megaphone.png"
-                      alt="profile-img" style="width: 30px; margin-right: 20px">Log out</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-
-                <a href="./index.php" ><img src="IMG/LSFullWhite.png" alt="logo service4u" width="100px text-center">
-                </a>
-
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <?php 
- 
- $user_id = $_SESSION['user_id'];
- 
-
- $query = "SELECT * FROM users WHERE user_id = $user_id";
-                $result = mysqli_query($strcon, $query);        
-                $row_announce = mysqli_fetch_assoc($result);
-               echo '
       <!-- Modal Profile -->
       <div>
         <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -109,11 +50,4 @@
           </div>
         </div>
       </div>
-      ';?>
-      <!-- 2. Modal My Announces -->
-      <?php include('includes/modals.php');?>
-      
- 
-      <!-- 3. Account modal My References -->
-      <?php include('includes/modals.php');?>
-    </section>
+    

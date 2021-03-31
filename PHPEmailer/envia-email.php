@@ -34,8 +34,8 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port= 587;
 $mail->SMTPSecure = "tls";
 $mail->SMTPAuth = true;
-$mail->Username = "service4uaspire2@gmail.com";
-$mail->Password = "xx6098XX!";
+$mail->Username = "idreamzjsm@gmail.com";
+$mail->Password = "xx6098xx";
 
 // Message config
 $mail->setFrom($mail->Username, $nome); //from
