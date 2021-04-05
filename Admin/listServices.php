@@ -19,7 +19,7 @@ $query = "SELECT * FROM user_announce";
     echo '                <td>' . $row_announce['announce_title'] . '</td>';
     echo '                <td>' . $row_announce['user_location'] . '</td>';
     echo '                  <td>79%</td>';
-    echo "<td><a class='btn btn-success' href='editServices.php?id=" .$row_announce['announce_id']  . "'>Edit</a> <a class='btn btn-danger' href='removeAnnounce.php?id=" . $row_announce['announce_id']  . "'>Remove</a> </td></tr>";
+    echo "<td><a class='btn btn-danger' href='removeAnnounce.php?id=" . $row_announce['announce_id']  . "'>Remove</a> </td></tr>";
    
     
   

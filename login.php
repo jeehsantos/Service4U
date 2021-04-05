@@ -6,7 +6,7 @@ if(isset($_POST['btn-enter'])):
     $email = mysqli_real_escape_string($strcon, $_POST['email']);
     $password = mysqli_real_escape_string($strcon, $_POST['password']);
     if(empty($email) or empty($password)):
-        $errors[] = "<li> The field login/password must be filler";
+        $errors[] = "<li> The field login/password must be filled";
     else:
        
         $query = "SELECT email FROM users WHERE email = '$email'";
@@ -36,7 +36,7 @@ if(isset($_POST['btn-enter'])):
             
         else:
             $errors[] = "<li>User does not exist</li>";
-            echo "Something went wrong"; 
+            echo '<div class="container"><h1 class="text-center">User does not exist, go back and try a different email</h1><a href="index.php">Click here</a></div>'; 
              
         endif;
         
