@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navTop">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navTop" style=" background: linear-gradient(to right, #ff722a, #ffc02a);">
       <div class="container-fluid navBarImage">
         <img src="IMG/LSFullWhite.png" alt="Logo service4u">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

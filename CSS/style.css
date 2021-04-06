@@ -60,6 +60,38 @@ body {
 	2 Navbar
 ==========================*/
 
+
+/* Navbar */
+.navBarImage>img {
+  width: 150px;
+}
+
+.navTop {
+  background: linear-gradient(to right, #ff722a, #ffc02a);
+}
+
+.navLink {
+  color: #ffffff !important;
+}
+
+.navLink.active {
+  background-color: #0068ff;
+  border-radius: 10px;
+}
+
+.headNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.info-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+/* Jenni CSS Style begins */
 #brand-img-nav{
     height: 80px;
 }
@@ -86,13 +118,13 @@ body {
     color: white;
 }
 
-/* Jenni CSS Style begins */
 /* Navbar-Logged */
 .navBarImage>img {
     width: 150px;
   }
   
   .navTop {
+    z-index: 99;
     width: 100%;
     position: fixed;
     background: #ffc02a;

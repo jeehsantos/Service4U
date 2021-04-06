@@ -20,7 +20,8 @@ body {
 }
 
 .navTop {
-  background-color: transparent !important;
+  z-index: 99;
+  background: linear-gradient(to right, #ff722a, #ffc02a);
 }
 
 .navLink {
@@ -41,7 +42,7 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-
+ 
 /* Header */
 .header {
   display: flex;
@@ -51,6 +52,7 @@ body {
 }
 
 .inputContainer {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -583,6 +585,7 @@ body {
   }
 
   .inputGroup {
+  
     display: flex;
     flex-direction: column;
   }

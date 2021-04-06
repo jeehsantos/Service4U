@@ -52,44 +52,23 @@ function limit_phrase($text , $limit, $break = true) {
   </script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
-  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
   <link rel="stylesheet" href="CSS/announces.css" />
   <link rel="shortcut icon" href="http://localhost/GitHub/Service4U/IMG/service4u.ico" type="image/x-icon">
   <title>Announces</title>
-  <script type="module" src="main.js"></script>
+ 
 
 
 </head>
 
 <body>
-  <div id="root">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navTop">
-      <div class="container-fluid navBarImage">
-        <img src="IMG/LSFullWhite.png" alt="Logo service4u">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse headNav" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link navLink" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navLink" id="navigation-link" data-bs-toggle="modal" data-bs-target="#login-panel"
-                href="#">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navLink" href="#">Register</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+<?php if(isset($_SESSION['logged'])){
+  include('includes/loggednavbar.php');
+}else{
+    
+    include('includes/navbar.php');
+} ?>
+    <div id="root">
     <section class="announcesContainer">
       <div class="announcesView">
         <form action="announces.php" method="POST">
@@ -101,8 +80,7 @@ function limit_phrase($text , $limit, $break = true) {
                   aria-describedby="addon-wrapping">
                 <select class="form-select" aria-label="Default select example">
                   <option selected>Subject</option>
-                  <option value="1">Renovation</option>
-                  <option value="2">Classes</option>
+                  <?php include('Admin/includes/selectProcess.php'); ?>
                 </select>
 
                 <input type="text" class="form-control" placeholder="City, suburb or country" aria-label="Username"
@@ -265,7 +243,11 @@ function limit_phrase($text , $limit, $break = true) {
   </nav>
 
   </div>
-
+  <script type="module" src="main.js"></script>
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="JS/announces.js"></script>
   <script>
     CKEDITOR.replace('announce-description');

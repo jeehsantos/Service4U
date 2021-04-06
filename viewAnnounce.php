@@ -54,7 +54,7 @@ if(empty($_SESSION['user_id'])){
   
  }else{
   $resultado .= ' <textarea class="form-control" name="message" aria-label="With textarea"></textarea>
-  <button type="submit" onclick="MessageMeAlert()" disabled class="btn btn-primary " name="message-btn" style="width: 150px;">Message me</button>';
+  <button type="submit" onclick="MessageMeAlert()" class="btn btn-primary " name="message-btn" style="width: 150px;">Message me</button>';
   
  } 
  
@@ -129,21 +129,29 @@ width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></i
 </div>
 <div class="referenceData">';
 if(empty($_SESSION['user_id'])){
-  $resultado .='<textarea class="form-control" disabled aria-label="With textarea"  placeholder ="Register to drop a review"></textarea>';
+  $resultado .='<textarea class="form-control" disabled aria-label="With textarea"  placeholder ="Register to drop a review"></textarea></div>
+  <div class="referenceRate">
+    <p class="card-text"><small class="text-muted">94%</small></p>
+  </div>
+  </div>
+  </div>
+  </div>
+  <button type="button" class="btn btn-primary buttonSearch" disabled>Comment</button>';
   
  }else{
-  $resultado .= ' <textarea class="form-control" aria-label="With placeholder ="to textarea"></textarea>';
+  $resultado .= ' <textarea class="form-control" aria-label="With placeholder ="to textarea"></textarea></div>
+  <div class="referenceRate">
+    <p class="card-text"><small class="text-muted">94%</small></p>
+  </div>
+  </div>
+  </div>
+  </div>
+  <button type="button" class="btn btn-primary buttonSearch">Comment</button>'
+  ;
   
  }  
  $resultado .='   
-</div>
-<div class="referenceRate">
-  <p class="card-text"><small class="text-muted">94%</small></p>
-</div>
-</div>
-</div>
-</div>
-<button type="button" class="btn btn-primary buttonSearch">Comment</button>
+
 </div>
 
 </div>
