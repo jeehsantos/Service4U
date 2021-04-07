@@ -459,7 +459,13 @@ body {
   margin-left: 10px;
 }
  
+#review{
+  background-image: url(../IMG/good-feedback\ \(1\).png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: right center; 
 
+}
 /* Modal New Service */
 .modalBodyService {
   display: flex;

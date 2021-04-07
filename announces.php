@@ -217,7 +217,6 @@ function limit_phrase($text , $limit, $break = true) {
     </div>
   </div>
 
-
   </section>
 
   <nav class="navbar fixed-bottom navFooter">

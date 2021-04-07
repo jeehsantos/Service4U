@@ -80,16 +80,16 @@ $resultado .= '</div>
 <div class="modalMap">
 <iframe
 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.425104881535!2d172.64492781528415!3d-43.5351797901784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318a2027300f27%3A0x9443153dd7afeb8d!2sAspire%202%20International-%20Christchurch%20Campus!5e0!3m2!1spt-BR!2snz!4v1615859773473!5m2!1spt-BR!2snz"
-width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+width="300" height="300" style="border:0;"  allowfullscreen="" loading="lazy"></iframe>
 </div>
 </div>
 </div>
 
 <div class="commentSection">';
-$query_comment = "SELECT * FROM review_tb WHERE announce_id = '" . $_POST['announce_id'] . " 'LIMIT 1";
+$query_comment = "SELECT * FROM review_tb WHERE announce_id = '" . $_POST['announce_id'] . " '";
 $result = mysqli_query($strcon, $query_comment);
 
-if(mysqli_num_rows($result) == 1){
+if(mysqli_num_rows($result) > 0){
   while($row_announce = mysqli_fetch_assoc($result)){
    
            
@@ -104,45 +104,45 @@ $resultado .= '
 <p>'. $row_announce['comment'] .'</p>
 </div>
 <div class="referenceRate">
-<p class="card-text"><small class="text-muted">94%</small></p>
+<p class="card-text"><img src="IMG/facebookLike.png" style="width: 35px;" alt="reviews"><small class="text-muted">94%</small></p>
 </div>
 </div>
 </div>
 </div>';}
 $resultado .= '
-<form action="addReview.php" method="POST">
+
 <div class="commentMyreference">
-<div class="myComment">
-<div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-<div class="modalReferenceContainer">
-<div class="referenceImage">
-  <img src="IMG/user-profile.jpg" alt="Announcers">
-</div>
+    <div class="myComment">
+      <div class="card mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="modalReferenceContainer">
+          <div class="referenceImage">
+            <img src="IMG/user-profile.jpg" alt="Announcers">
+          </div>
 
 <div class="referenceData">';}else{
  $resultado  .= '<div><h3>The announce has no reviews at the moment</h3></div>';
 }
-if(empty($_SESSION['user_id'])){
-  $resultado .='<textarea class="form-control" disabled aria-label="With textarea"  placeholder ="Register to drop a review"></textarea></div>
+      if(empty($_SESSION['user_id'])){
+              $resultado .='<textarea class="form-control" disabled aria-label="With textarea"  placeholder ="Register to drop a review"></textarea>
+                  </div>
+                      <div class="referenceRate">
+                        <p class="card-text"><small class="text-muted">94%</small></p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+              <button type="submit" class="btn btn-primary" name="commentBtn" disabled>Comment</button>';
+              
+      }else{
+  $resultado .= '<form action="addReview.php" method="POST"><textarea class="form-control" aria-label="With placeholder ="to textarea" name="messageReview" required></textarea><p class="card-text"><input type="number" class="form-control" min="1" max="5" value="5" name="review-rate" required> </p>
+    <button type="submit" class="btn btn-primary" name="commentBtn">Comment</button></form></div>
   <div class="referenceRate">
-    <p class="card-text"><small class="text-muted">94%</small></p>
+     
   </div>
-  </div>
-  </div>
-  </div>
-  <button type="submit" class="btn btn-primary buttonSearch" disabled>Comment</button>';
   
- }else{
-  $resultado .= '<textarea class="form-control" aria-label="With placeholder ="to textarea" name="messageReview" ></textarea>
-  <button type="submit" class="btn btn-primary buttonSearch">Comment</button> </div>
-  <div class="referenceRate">
-    <p class="card-text"><small class="text-muted">94%</small></p>
-  </div></form>
-
   </div>
   </div>
-  </div>'
-  ;
+  </div>';
   
  }  
  $resultado .='   
