@@ -7,7 +7,7 @@ function showDetails(user) {
   document.getElementById("userFullName").value = fullName;
   document.getElementById("userEmail").value = email;
   document.getElementById("userPassword").value = password;
-  document.getElementById("getId").value = id;
+ 
 }
  
  
